@@ -26,7 +26,7 @@ export const Route = createFileRoute('/')({
     { title: 'Enzo Campos (@enzokmpos) — Social Media' },
     { name: 'description', content: 'Portfólio de Enzo Campos: social media, roteiros, cronogramas, edições, posicionamento e gerenciamento de crise para influenciadores, artistas e marcas.' },
     { property: 'og:title', content: 'Enzo Campos — Portfólio de Social Media' },
-    { property: 'og:description', content: 'Social media para Alemão Luiz, Dudu Footz, Menina do Bolo, Oguxhta e Fe Castro. Conheça o trabalho de @enzokmpos.' },
+    { property: 'og:description', content: 'Social media para Alemão Luiz, Dudu Footz, Menina do Bolo, Fe Castro e Obigzin. Conheça o trabalho de @enzokmpos.' },
     { property: 'og:type', content: 'website' },
     { name: 'twitter:card', content: 'summary_large_image' },
   ] }),
@@ -34,11 +34,11 @@ export const Route = createFileRoute('/')({
 });
 
 const clients: CaseClient[] = [
-  { id: 'alemao', name: 'Alemão Luiz', handle: '@oalemaoluiz', category: 'Influenciadores', role: 'Influenciador · Lifestyle, humor e futebol', audience: '406 mil seguidores', url: 'https://www.instagram.com/oalemaoluiz/', images: [alemao1.url, alemao3.url, alemao4.url], accent: 'blue', description: 'Social media completo para um influenciador de lifestyle, humor e futebol: roteiros, edições e cronograma pensados para manter a constância e fortalecer a conexão com o público.' },
-  { id: 'dudu', name: 'Dudu Footz', handle: '@dudufootz', category: 'Influenciadores', role: 'Influenciador · Humor e futebol', audience: '2 milhões de seguidores', url: 'https://www.instagram.com/dudufootz/', images: [dudu1.url, dudu4.url, dudu3.url], accent: 'green', description: 'Estratégia de conteúdo para um perfil de humor e futebol com milhões de seguidores: posicionamento, roteiros com ganchos fortes e edição no ritmo das redes.' },
+  { id: 'alemao', name: 'Alemão Luiz', handle: '@oalemaoluiz', category: 'Influenciadores', chip: 'Cliente', role: 'Influenciador · Lifestyle, humor e futebol', audience: '406 mil seguidores', url: 'https://www.instagram.com/oalemaoluiz/', images: [alemao1.url, alemao3.url, alemao4.url], accent: 'blue', description: 'Social media completo para um influenciador de lifestyle, humor e futebol: roteiros, edições e cronograma pensados para manter a constância e fortalecer a conexão com o público.' },
+  { id: 'dudu', name: 'Dudu Footz', handle: '@dudufootz', category: 'Influenciadores', chip: 'Cliente', role: 'Influenciador · Humor e futebol', audience: '2 milhões de seguidores', url: 'https://www.instagram.com/dudufootz/', images: [dudu1.url, dudu4.url, dudu3.url], accent: 'green', description: 'Estratégia de conteúdo para um perfil de humor e futebol com milhões de seguidores: posicionamento, roteiros com ganchos fortes e edição no ritmo das redes.' },
   { id: 'bolo', name: 'Menina do Bolo', handle: '@meninadobolo_oficial', category: 'Doceria', role: 'Doceria · Confeitaria artesanal', audience: '35 mil seguidores', url: 'https://www.instagram.com/meninadobolo_oficial/', images: [bolo1.url, bolo4.url, bolo6.url], accent: 'pink', description: 'Presença digital para uma confeitaria artesanal: apresentação atrativa dos produtos, cronograma de postagens e uma identidade clara e consistente no feed.' },
-  { id: 'fe', name: 'Fe Castro', handle: '@eufecastroo', category: 'Cantores', role: 'Cantor · Compositor', audience: '2,9 mil seguidores', url: 'https://www.instagram.com/eufecastroo/', images: [fe3.url, fe1.url, fe6.url], accent: 'sun', description: 'Posicionamento artístico para cantor e compositor: narrativa do perfil, divulgação de lançamentos e conteúdos que aproximam o artista de quem escuta.' },
-  { id: 'oguxhta', name: 'Oguxhta', handle: '@oguxhta', category: 'Cantores', role: 'Cantor', images: [], accent: 'primary', description: 'Social media para cantor: roteiros, edições e estratégia de redes para dar voz e alcance à carreira musical.' },
+  { id: 'fe', name: 'Fe Castro', handle: '@eufecastroo', category: 'Cantores', chip: 'Cliente', role: 'Cantor · Compositor', audience: '2,9 mil seguidores', url: 'https://www.instagram.com/eufecastroo/', images: [fe3.url, fe1.url, fe6.url], accent: 'sun', description: 'Posicionamento artístico para cantor e compositor: narrativa do perfil, divulgação de lançamentos e conteúdos que aproximam o artista de quem escuta.' },
+  { id: 'obigzin', name: 'Obigzin', handle: '@obigzin', category: 'Cantores', chip: 'Cliente', role: 'Cantor · Luthier e produtor musical', audience: '2,3 mil seguidores', url: 'https://www.instagram.com/obigzin/', images: [], reels: ['DV9ap-zBUeS', 'DWztCyihR1L', 'DZGQcM1p-Ek'], accent: 'primary', description: 'Social media para cantor, luthier e produtor musical: roteiros, edições e estratégia de redes para dar voz e alcance à carreira musical.' },
 ];
 const filters = ['Todos', 'Influenciadores', 'Doceria', 'Cantores'];
 const services = [
@@ -62,7 +62,7 @@ const experience = [
   ['Gestão de perfil', 'Dudu Footz / Influenciador'],
   ['Conteúdo e cronograma', 'Menina do Bolo / Doceria'],
   ['Social media', 'Fe Castro / Cantor'],
-  ['Social media', 'Oguxhta / Cantor'],
+  ['Social media', 'Obigzin / Cantor'],
 ];
 const skills = ['Captação de vídeo', 'Edição dinâmica', 'Roteiros sob medida', 'Artes para marca', 'Cronogramas de postagem', 'Posicionamento nas redes', 'Gerenciamento de crise', 'Grupo de ação e UP'];
 const offers = ['Captação de vídeo', 'Edição que prende do início ao fim', 'Roteiros sob medida para qualquer nicho', 'Artes com a cara da sua marca', 'Cronograma de postagens'];
@@ -87,7 +87,7 @@ function Portfolio() {
           <img src={heroImage} alt="Enzo Campos em retrato vermelho com efeito de movimento" className="hero-image" width={1584} height={672} fetchPriority="high" />
           <div className="hero-lockup">
             <div className="hero-lockup-top">
-                            <span className="hero-script">Enzo Campos</span>
+                            <span className="hero-script">EnzoKmpos</span>
                           </div>
             <h1>PORTFÓLIO</h1>
             <div className="hero-lockup-bottom">

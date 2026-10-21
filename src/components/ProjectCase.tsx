@@ -9,6 +9,10 @@ import { PERIODS, STATS_ARE_ILLUSTRATIVE, formatCompact, formatFull, formatPerce
 export type CaseClient = {
   id: string; name: string; handle: string; category: string; role: string;
   audience?: string; url?: string; images: string[]; accent: string; description: string;
+  /** Label of the main tag above the description; defaults to "Social media". */
+  chip?: string;
+  /** Instagram reel ids shown instead of the photos. */
+  reels?: string[];
 };
 
 function CountUp({ value, active, format }: { value: number; active: boolean; format: (n: number) => string }) {
@@ -58,7 +62,7 @@ export function ProjectCase({ client, index, total }: { client: CaseClient; inde
         <div className="case-intro">
           <span className="case-index">{String(index + 1).padStart(2, '0')} / {String(total).padStart(2, '0')} · {client.category}</span>
           <h3 className="case-title">{words.map(word => <span key={word}>{word}</span>)}</h3>
-          <div className="case-chips" aria-hidden="true"><span className="case-chip-main">Social media</span><span className="case-chip-alt">{client.category}</span></div>
+          <div className="case-chips" aria-hidden="true"><span className="case-chip-main">{client.chip ?? 'Social media'}</span><span className="case-chip-alt">{client.category}</span></div>
           <p className="case-description">{client.description}</p>
           <div className="case-meta">
             <span>{client.handle}</span>
@@ -106,8 +110,14 @@ export function ProjectCase({ client, index, total }: { client: CaseClient; inde
         </div>
       </div>
 
-      <div className="case-posters">
-        {client.images.length > 0
+      <div className={client.reels?.length ? 'case-posters case-posters-reels' : 'case-posters'}>
+        {client.reels?.length
+          ? client.reels.map((id, i) => (
+            <div key={id} className="case-poster case-reel">
+              <iframe src={`https://www.instagram.com/reel/${id}/embed/`} title={`Reel ${i + 1} de ${client.name} no Instagram`} loading="lazy" allow="encrypted-media; picture-in-picture; clipboard-write" allowFullScreen scrolling="no" />
+            </div>
+          ))
+          : client.images.length > 0
           ? client.images.map((src, i) => (
             <a key={src} href={client.url} target="_blank" rel="noopener noreferrer" onClick={open} className="case-poster" aria-label={`Abrir o Instagram de ${client.name}`}>
               <img src={src} alt={`Publicação em destaque ${i + 1} de ${client.name} no Instagram`} width={480} height={600} loading="lazy" />

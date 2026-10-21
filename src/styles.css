@@ -29,26 +29,26 @@
   --radius-lg: 8px;
 }
 :root {
-  --background: oklch(0.145 0.003 30);
-  --foreground: oklch(0.97 0.003 80);
-  --card: oklch(0.19 0.003 30);
-  --primary: oklch(0.6 0.235 28);
-  --primary-foreground: oklch(0.99 0 0);
-  --secondary: oklch(0.235 0.003 30);
-  --muted-foreground: oklch(0.64 0.006 60);
-  --border: oklch(0.31 0.003 30);
-  --hero-shade: oklch(0.07 0.02 25 / 35%);
+  --background: #0F0F12;
+  --foreground: #F5F5F2;
+  --card: color-mix(in oklch, #0F0F12 94%, #F5F5F2);
+  --primary: #FF5A1F;
+  --primary-foreground: #F5F5F2;
+  --secondary: color-mix(in oklch, #0F0F12 90%, #F5F5F2);
+  --muted-foreground: color-mix(in oklch, #F5F5F2 60%, #0F0F12);
+  --border: color-mix(in oklch, #0F0F12 82%, #F5F5F2);
+  --hero-shade: color-mix(in oklch, #0F0F12 35%, transparent);
   --sun: oklch(0.88 0.17 90);
   --pink: oklch(0.78 0.13 345);
   --blue: oklch(0.55 0.19 265);
   --green: oklch(0.67 0.15 155);
-  --overlay: oklch(0.05 0 0 / 85%);
-  --curtain: repeating-linear-gradient(90deg, oklch(0.09 0 0) 0 18px, oklch(0.16 0.003 30) 30px, oklch(0.1 0 0) 44px, oklch(0.2 0.003 30) 52px, oklch(0.09 0 0) 70px);
-  --curtain-shade: radial-gradient(ellipse at 50% 0%, oklch(0.3 0.01 30 / 35%), transparent 60%), linear-gradient(180deg, oklch(0.05 0 0 / 20%), oklch(0.05 0 0 / 75%));
-  --ink: oklch(0.07 0 0);
-  --chip: oklch(0.97 0.003 80);
-  --chip-foreground: oklch(0.12 0 0);
-  --shadow-photo: 0 30px 60px -20px oklch(0 0 0 / 70%);
+  --overlay: color-mix(in oklch, #0F0F12 85%, transparent);
+  --curtain: repeating-linear-gradient(90deg, #0F0F12 0 18px, color-mix(in oklch, #0F0F12 93%, #F5F5F2) 30px, #0F0F12 44px, color-mix(in oklch, #0F0F12 89%, #F5F5F2) 52px, #0F0F12 70px);
+  --curtain-shade: radial-gradient(ellipse at 50% 0%, color-mix(in oklch, #F5F5F2 10%, transparent), transparent 60%), linear-gradient(180deg, color-mix(in oklch, #0F0F12 20%, transparent), color-mix(in oklch, #0F0F12 75%, transparent));
+  --ink: #0F0F12;
+  --chip: #F5F5F2;
+  --chip-foreground: #0F0F12;
+  --shadow-photo: 0 30px 60px -20px color-mix(in oklch, #0F0F12 85%, transparent);
 }
 @layer base {
   * { box-sizing: border-box; border-color: var(--border); letter-spacing: 0; }
@@ -320,3 +320,16 @@ html, body { max-width:100%; overflow-x:clip; }
 .hero-lockup-bottom { justify-content:center; }
 @media(max-width:700px){ .hero-lockup, .hero-v2 .hero-actions { margin:0 auto; width:90vw; } .hero-script { margin:0; } }
 .case-posters { max-width:720px; margin-left:auto; margin-right:auto; gap:16px; } .case-poster { aspect-ratio:1 / 1; border-radius:12px; } @media(max-width:700px){ .case-posters { gap:8px; } }
+.case-posters-reels { max-width:none; gap:20px; }
+@media(max-width:700px) {
+  .case-chips { margin:10px 0 20px 4px; }
+  .case-posters-reels { display:flex; overflow-x:auto; scroll-snap-type:x mandatory; gap:12px; margin-left:-18px; margin-right:-18px; padding:22px 18px 6px; scrollbar-width:none; }
+  .case-posters-reels::before { display:none; }
+  .case-posters-reels .case-reel { flex:0 0 78%; scroll-snap-align:center; }
+  .footer-links { flex-direction:column; gap:12px; }
+  .footer-links a { overflow-wrap:anywhere; }
+  .footer-top { gap:16px; }
+}
+.case-reel { aspect-ratio:4 / 5; background:var(--ink); }
+.case-reel iframe { position:absolute; left:0; top:-54px; width:100%; height:calc(100% + 400px); border:0; }
+.case-reel::after { display:none; }
