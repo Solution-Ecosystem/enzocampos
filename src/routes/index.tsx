@@ -1,8 +1,10 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { useState } from 'react';
-import { ArrowUpRight, ArrowDown, ArrowUp, Menu, X, Instagram, MessageCircle, Copyright } from 'lucide-react';
+import { ArrowUpRight, ArrowDown, ArrowUp, Menu, X, Instagram, MessageCircle, Copyright, PenLine, Scissors, CalendarDays, ShieldAlert } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import heroImage from '@/assets/red-editorial.jpg';
+import sealImage from '@/assets/seal-check.png';
+import enzoPhoto from '@/assets/clients/enzo-campos.jpg.asset.json';
 import { INSTAGRAM_HANDLE, INSTAGRAM_URL, WHATSAPP_DISPLAY, openExternal, whatsappUrl } from '@/lib/contact';
 import alemao1 from '@/assets/clients/oalemaoluiz-1.jpg.asset.json';
 import alemao3 from '@/assets/clients/oalemaoluiz-3.jpg.asset.json';
@@ -48,6 +50,12 @@ const services = [
   { name: 'Gerenciamento de crise', description: 'Resposta rápida e estratégica para proteger a imagem em momentos delicados.' },
   { name: 'Grupo de ação e UP', description: 'Mobilização de grupos de engajamento para dar “up” nas publicações e ampliar o alcance.' },
 ];
+const focusAreas = [
+  { label: 'Roteiro', Icon: PenLine },
+  { label: 'Edição', Icon: Scissors },
+  { label: 'Cronograma', Icon: CalendarDays },
+  { label: 'Crise', Icon: ShieldAlert },
+];
 const reels = ['DduYEoCB6qZ', 'DdKb0NMhaCy', 'DczJzTrhOBB'];
 
 function Portfolio() {
@@ -84,7 +92,43 @@ function Portfolio() {
           <div className="project-grid">{visibleClients.map(client => <ClientCard key={client.id} client={client} />)}</div>
           <p className="work-note">Trabalho de social media no Instagram. Imagens: publicações em destaque de cada perfil.</p>
         </section>
-        <section className="about-band" id="sobre"><div className="section about-layout"><div><div className="section-eyebrow">02 / Por trás das ideias</div><h2 className="section-title">Muito prazer,<br />sou o Enzo<span className="text-primary">.</span></h2><div className="about-symbol" aria-hidden="true">✳</div></div><div><p className="about-copy"><strong>Entre uma boa ideia e uma conexão de verdade, existe intenção.</strong> É nesse espaço que eu crio: unindo estratégia, roteiro e edição para dar personalidade à presença digital de cada cliente.</p><p className="about-copy">Meu olhar vai além de um feed bonito. Acredito em uma comunicação que tem o que dizer, sabe com quem está falando e encontra a sua própria forma de fazer isso.</p><div className="about-tags"><span>Olhar estratégico</span><span>Essência criativa</span><span>Conexões reais</span></div></div></div></section>
+        <section className="about-stage" id="sobre"><div className="section">
+          <div className="section-eyebrow">02 / Por trás das ideias</div>
+          <div className="about-panel">
+            <figure className="about-photo">
+              <img src={enzoPhoto.url} alt="Enzo Campos" width={360} height={640} loading="lazy" />
+              <figcaption>THE<br />REAL ONE</figcaption>
+              <img className="about-seal" src={sealImage} alt="" aria-hidden="true" width={816} height={816} loading="lazy" />
+            </figure>
+            <div className="about-info">
+              <p className="about-kicker">SOBRE <strong>MIM</strong></p>
+              <h2 className="about-hello">OLÁ!</h2>
+              <div className="about-grid">
+                <div>
+                  <h3>NAS REDES</h3>
+                  <p><a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" onClick={e => openExternal(e, INSTAGRAM_URL)}>{INSTAGRAM_HANDLE}</a><br />3,6 mil seguidores<br />Cristo · Lifestyle · Humor</p>
+                  <h3>FOCO</h3>
+                  <div className="about-tools">{focusAreas.map(({ label, Icon }) => <span key={label} title={label}><Icon aria-hidden="true" /><small>{label}</small></span>)}</div>
+                </div>
+                <div>
+                  <h3>EXPERIÊNCIA</h3>
+                  <ul className="about-list">{clients.map(client => <li key={client.id}><span>Social media <small>Instagram</small></span>{client.name} / {client.role.split(' · ')[0]}</li>)}</ul>
+                </div>
+              </div>
+              <div className="about-grid about-grid-bottom">
+                <div>
+                  <h3>HABILIDADES</h3>
+                  <ul className="about-skills">{services.map(item => <li key={item.name}>{item.name}</li>)}</ul>
+                </div>
+                <div>
+                  <h3>IDIOMAS</h3>
+                  <p>Português</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="about-texts"><p><strong>Entre uma boa ideia e uma conexão de verdade, existe intenção.</strong> É nesse espaço que eu crio: unindo estratégia, roteiro e edição para dar personalidade à presença digital de cada cliente.</p><p>Meu olhar vai além de um feed bonito. Acredito em uma comunicação que tem o que dizer, sabe com quem está falando e encontra a sua própria forma de fazer isso.</p></div>
+        </div></section>
         <section className="section" id="servicos"><div className="section-eyebrow">03 / O que eu faço</div><div className="section-heading"><h2 className="section-title">Da ideia à<br /><em>presença digital.</em></h2><p>Tudo o que eu faço com meus clientes, do roteiro ao gerenciamento de crise.</p></div><div className="service-list">{services.map((item, i) => <div className="service-row" key={item.name}><span className="service-number">0{i + 1}</span><h3>{item.name}</h3><p>{item.description}</p><ArrowUpRight /></div>)}</div></section>
         <section className="about-band" id="redes"><div className="section">
           <div className="section-eyebrow">04 / Redes sociais</div>
