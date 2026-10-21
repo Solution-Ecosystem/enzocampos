@@ -63,7 +63,7 @@ function Portfolio() {
         <a href={whatsapp} target="_blank" rel="noopener noreferrer" onClick={e => openExternal(e, whatsapp)} className="header-contact">Vamos conversar <ArrowUpRight /></a>
         <Button className="mobile-menu" variant="ghost" size="icon" aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'} aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? <X /> : <Menu />}</Button>
       </header>
-      {menuOpen && <nav className="mobile-nav" aria-label="Navegação móvel">{[['Projetos', 'projetos'], ['Sobre mim', 'sobre'], ['O que eu faço', 'servicos'], ['Redes sociais', 'redes']].map(([label, id]) => <a key={id} href={`#${id}`} onClick={() => setMenuOpen(false)}>{label}</a>)}<a href={whatsapp} target="_blank" rel="noopener noreferrer" onClick={e => openExternal(e, whatsapp)} onClick={e => { setMenuOpen(false); openExternal(e, whatsapp); }}>Vamos conversar</a></nav>}
+      {menuOpen && <nav className="mobile-nav" aria-label="Navegação móvel">{[['Projetos', 'projetos'], ['Sobre mim', 'sobre'], ['O que eu faço', 'servicos'], ['Redes sociais', 'redes']].map(([label, id]) => <a key={id} href={`#${id}`} onClick={() => setMenuOpen(false)}>{label}</a>)}<a href={whatsapp} target="_blank" rel="noopener noreferrer" onClick={e => { setMenuOpen(false); openExternal(e, whatsapp); }}>Vamos conversar</a></nav>}
       <main>
         <section className="hero" aria-label="Portfólio Enzo Campos">
           <img src={heroImage} alt="Composição editorial em tecido vermelho com luz e movimento" className="hero-image" width={1920} height={1024} fetchPriority="high" />
