@@ -50,7 +50,7 @@ const services = [
   { name: 'Gerenciamento de crise', description: 'Resposta rápida e estratégica para proteger a imagem em momentos delicados.' },
   { name: 'Grupo de ação e UP', description: 'Mobilização de grupos de engajamento para dar “up” nas publicações e ampliar o alcance.' },
 ];
-const focus = [
+const focusAreas = [
   { label: 'Roteiro', Icon: PenLine },
   { label: 'Edição', Icon: Scissors },
   { label: 'Cronograma', Icon: CalendarDays },
@@ -108,7 +108,7 @@ function Portfolio() {
                   <h3>NAS REDES</h3>
                   <p><a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" onClick={e => openExternal(e, INSTAGRAM_URL)}>{INSTAGRAM_HANDLE}</a><br />3,6 mil seguidores<br />Cristo · Lifestyle · Humor</p>
                   <h3>FOCO</h3>
-                  <div className="about-tools">{focus.map(({ label, Icon }) => <span key={label} title={label}><Icon aria-hidden="true" /><small>{label}</small></span>)}</div>
+                  <div className="about-tools">{focusAreas.map(({ label, Icon }) => <span key={label} title={label}><Icon aria-hidden="true" /><small>{label}</small></span>)}</div>
                 </div>
                 <div>
                   <h3>EXPERIÊNCIA</h3>
