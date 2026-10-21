@@ -330,3 +330,6 @@ html, body { max-width:100%; overflow-x:clip; }
   .footer-links a { overflow-wrap:anywhere; }
   .footer-top { gap:16px; }
 }
+.case-reel { aspect-ratio:4 / 5; background:var(--ink); }
+.case-reel iframe { position:absolute; left:0; top:-54px; width:100%; height:calc(100% + 400px); border:0; }
+.case-reel::after { display:none; }
