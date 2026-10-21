@@ -2,6 +2,7 @@ import { createFileRoute } from '@tanstack/react-router';
 import { useState } from 'react';
 import { ArrowUpRight, ArrowDown, ArrowUp, Menu, X, Instagram, MessageCircle, Copyright, PenLine, Scissors, CalendarDays, ShieldAlert } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { ProjectCase, type CaseClient } from '@/components/ProjectCase';
 import heroImage from '@/assets/red-editorial.jpg';
 import sealImage from '@/assets/seal-check.png';
 import enzoPhoto from '@/assets/clients/enzo-campos.jpg.asset.json';
@@ -31,14 +32,12 @@ export const Route = createFileRoute('/')({
   component: Portfolio,
 });
 
-type Client = { id: string; name: string; handle: string; category: string; role: string; audience?: string; url?: string; images: string[] };
-
-const clients: Client[] = [
-  { id: 'alemao', name: 'Alemão Luiz', handle: '@oalemaoluiz', category: 'Influenciadores', role: 'Influenciador · Lifestyle, humor e futebol', audience: '406 mil seguidores', url: 'https://www.instagram.com/oalemaoluiz/', images: [alemao1.url, alemao3.url, alemao4.url] },
-  { id: 'dudu', name: 'Dudu Footz', handle: '@dudufootz', category: 'Influenciadores', role: 'Influenciador · Humor e futebol', audience: '2 milhões de seguidores', url: 'https://www.instagram.com/dudufootz/', images: [dudu1.url, dudu4.url, dudu3.url] },
-  { id: 'bolo', name: 'Menina do Bolo', handle: '@meninadobolo_oficial', category: 'Doceria', role: 'Doceria · Confeitaria artesanal', audience: '35 mil seguidores', url: 'https://www.instagram.com/meninadobolo_oficial/', images: [bolo1.url, bolo4.url, bolo6.url] },
-  { id: 'fe', name: 'Fe Castro', handle: '@eufecastroo', category: 'Cantores', role: 'Cantor · Compositor', audience: '2,9 mil seguidores', url: 'https://www.instagram.com/eufecastroo/', images: [fe3.url, fe1.url, fe6.url] },
-  { id: 'oguxhta', name: 'Oguxhta', handle: '@oguxhta', category: 'Cantores', role: 'Cantor', images: [] },
+const clients: CaseClient[] = [
+  { id: 'alemao', name: 'Alemão Luiz', handle: '@oalemaoluiz', category: 'Influenciadores', role: 'Influenciador · Lifestyle, humor e futebol', audience: '406 mil seguidores', url: 'https://www.instagram.com/oalemaoluiz/', images: [alemao1.url, alemao3.url, alemao4.url], accent: 'blue', description: 'Social media completo para um influenciador de lifestyle, humor e futebol: roteiros, edições e cronograma pensados para manter a constância e fortalecer a conexão com o público.' },
+  { id: 'dudu', name: 'Dudu Footz', handle: '@dudufootz', category: 'Influenciadores', role: 'Influenciador · Humor e futebol', audience: '2 milhões de seguidores', url: 'https://www.instagram.com/dudufootz/', images: [dudu1.url, dudu4.url, dudu3.url], accent: 'green', description: 'Estratégia de conteúdo para um perfil de humor e futebol com milhões de seguidores: posicionamento, roteiros com ganchos fortes e edição no ritmo das redes.' },
+  { id: 'bolo', name: 'Menina do Bolo', handle: '@meninadobolo_oficial', category: 'Doceria', role: 'Doceria · Confeitaria artesanal', audience: '35 mil seguidores', url: 'https://www.instagram.com/meninadobolo_oficial/', images: [bolo1.url, bolo4.url, bolo6.url], accent: 'pink', description: 'Presença digital para uma confeitaria artesanal: apresentação atrativa dos produtos, cronograma de postagens e uma identidade clara e consistente no feed.' },
+  { id: 'fe', name: 'Fe Castro', handle: '@eufecastroo', category: 'Cantores', role: 'Cantor · Compositor', audience: '2,9 mil seguidores', url: 'https://www.instagram.com/eufecastroo/', images: [fe3.url, fe1.url, fe6.url], accent: 'sun', description: 'Posicionamento artístico para cantor e compositor: narrativa do perfil, divulgação de lançamentos e conteúdos que aproximam o artista de quem escuta.' },
+  { id: 'oguxhta', name: 'Oguxhta', handle: '@oguxhta', category: 'Cantores', role: 'Cantor', images: [], accent: 'primary', description: 'Social media para cantor: roteiros, edições e estratégia de redes para dar voz e alcance à carreira musical.' },
 ];
 const filters = ['Todos', 'Influenciadores', 'Doceria', 'Cantores'];
 const services = [
@@ -89,7 +88,7 @@ function Portfolio() {
           <div className="section-eyebrow">01 / Projetos selecionados</div>
           <div className="section-heading"><h2 className="section-title">Social media para<br /><em>quem vive das redes.</em></h2><p>Influenciadores, artistas e marcas que confiam no meu trabalho de social media no Instagram.</p></div>
           <div className="filters" role="group" aria-label="Filtrar projetos">{filters.map(item => <Button key={item} variant="ghost" className="filter-button" data-active={filter === item} aria-pressed={filter === item} onClick={() => setFilter(item)}>{item}{item === 'Todos' ? ` (0${clients.length})` : ''}</Button>)}</div>
-          <div className="project-grid">{visibleClients.map(client => <ClientCard key={client.id} client={client} />)}</div>
+          <div className="case-list">{visibleClients.map(client => <ProjectCase key={client.id} client={client} index={clients.indexOf(client)} total={clients.length} />)}</div>
           <p className="work-note">Trabalho de social media no Instagram. Imagens: publicações em destaque de cada perfil.</p>
         </section>
         <section className="about-stage" id="sobre"><div className="section">
@@ -149,25 +148,5 @@ function Portfolio() {
         </div>
       </footer>
     </>
-  );
-}
-
-function ClientCard({ client }: { client: Client }) {
-  const body = <>
-    {client.images.length > 0
-      ? <div className="client-media">{client.images.map((src, i) => <img key={src} src={src} alt={`Publicação em destaque ${i + 1} de ${client.name} no Instagram`} width={360} height={640} loading="lazy" />)}</div>
-      : <div className="client-media client-media-empty" aria-hidden="true"><span>{client.name}</span></div>}
-    {client.url && <span className="project-image-arrow"><ArrowUpRight /></span>}
-  </>;
-  const content = <>
-    <div className="project-open">{body}</div>
-    <div className="project-caption"><div><h3>{client.name}</h3><p>{client.handle} · {client.role}</p></div><div className="project-meta"><span>{client.audience ?? 'SOCIAL MEDIA'}</span>{client.url && <span className="project-cta"><Instagram /> Ver Instagram</span>}</div></div>
-  </>;
-  return (
-    <article className="project-card">
-      {client.url
-        ? <a className="project-link" href={client.url} target="_blank" rel="noopener noreferrer" onClick={e => openExternal(e, client.url!)} aria-label={`Ver o Instagram de ${client.name} (${client.handle})`}>{content}</a>
-        : content}
-    </article>
   );
 }
