@@ -115,12 +115,15 @@ function ClientCard({ client }: { client: Client }) {
       : <div className="client-media client-media-empty" aria-hidden="true"><span>{client.name}</span></div>}
     {client.url && <span className="project-image-arrow"><ArrowUpRight /></span>}
   </>;
+  const content = <>
+    <div className="project-open">{body}</div>
+    <div className="project-caption"><div><h3>{client.name}</h3><p>{client.handle} · {client.role}</p></div><div className="project-meta"><span>{client.audience ?? 'SOCIAL MEDIA'}</span>{client.url && <span className="project-cta"><Instagram /> Ver Instagram</span>}</div></div>
+  </>;
   return (
     <article className="project-card">
       {client.url
-        ? <a className="project-open" href={client.url} target="_blank" rel="noopener noreferrer" aria-label={`Ver o Instagram de ${client.name}`}>{body}</a>
-        : <div className="project-open">{body}</div>}
-      <div className="project-caption"><div><h3>{client.name}</h3><p>{client.handle} · {client.role}</p></div><span>{client.audience ?? 'SOCIAL MEDIA'}</span></div>
+        ? <a className="project-link" href={client.url} target="_blank" rel="noopener noreferrer" aria-label={`Ver o Instagram de ${client.name} (${client.handle})`}>{content}</a>
+        : content}
     </article>
   );
 }
