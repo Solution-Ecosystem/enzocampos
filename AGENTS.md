@@ -12,5 +12,6 @@
 ## Portfolio structure
 - Keep the portfolio as a single index route with in-page section navigation; this preserves the continuous editorial presentation.
 - Define portfolio styling and semantic colors in src/styles.css and use the shared Button for interactive controls to maintain one visual system.
-- Keep sample projects explicitly labeled as conceptual, and never invent client results or contact details; this avoids presenting demo content as real work.
-- Use bundled original imagery for the portfolio and accessible dialogs for project details and contact preparation; this keeps assets reliable and interactions keyboard-accessible.
+- Show only real client work and contact details the owner supplied, and never invent client results; this keeps the portfolio truthful.
+- Store client and Instagram imagery as Lovable asset pointers under src/assets/clients and embed reels via Instagram's official /embed iframes; this keeps media off the repo and avoids rehosting video.
+- Build WhatsApp and Instagram links only through src/lib/contact.ts; one source keeps every contact button consistent.
