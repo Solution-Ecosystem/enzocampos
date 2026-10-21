@@ -319,3 +319,4 @@ html, body { max-width:100%; overflow-x:clip; }
 .hero-script { margin:0; }
 .hero-lockup-bottom { justify-content:center; }
 @media(max-width:700px){ .hero-lockup, .hero-v2 .hero-actions { margin:0 auto; width:90vw; } .hero-script { margin:0; } }
+.case-posters { max-width:720px; margin-left:auto; margin-right:auto; gap:16px; } .case-poster { aspect-ratio:1 / 1; border-radius:12px; } @media(max-width:700px){ .case-posters { gap:8px; } }
