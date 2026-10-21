@@ -45,6 +45,7 @@
   --overlay: oklch(0.05 0 0 / 85%);
   --curtain: repeating-linear-gradient(90deg, oklch(0.09 0 0) 0 18px, oklch(0.16 0.003 30) 30px, oklch(0.1 0 0) 44px, oklch(0.2 0.003 30) 52px, oklch(0.09 0 0) 70px);
   --curtain-shade: radial-gradient(ellipse at 50% 0%, oklch(0.3 0.01 30 / 35%), transparent 60%), linear-gradient(180deg, oklch(0.05 0 0 / 20%), oklch(0.05 0 0 / 75%));
+  --ink: oklch(0.07 0 0);
   --chip: oklch(0.97 0.003 80);
   --chip-foreground: oklch(0.12 0 0);
   --shadow-photo: 0 30px 60px -20px oklch(0 0 0 / 70%);
@@ -271,3 +272,21 @@ a.agency-badge:hover { border-color:var(--primary); }
 .agency-badge em { font-style:normal; font-size:11px; color:var(--muted-foreground); line-height:1.4; }
 .agency-badge > svg { width:18px; margin-left:auto; flex-shrink:0; }
 @media(max-width:700px) { .agency-badge { border-radius:18px; } .agency-badge img { width:52px; height:52px; } }
+
+.social-band { background:var(--ink); border-block:1px solid var(--border); }
+.reel-card { border:1px solid var(--border); border-radius:18px; overflow:hidden; background:var(--ink); display:flex; flex-direction:column; transition:border-color .2s; }
+.reel-card:hover { border-color:var(--primary); }
+.reel-head { display:flex; align-items:center; gap:12px; padding:12px 14px; border-bottom:1px solid var(--border); }
+.reel-head img { width:38px; height:38px; border-radius:50%; object-fit:cover; border:2px solid var(--primary); }
+.reel-head span { display:flex; flex-direction:column; line-height:1.2; }
+.reel-head strong { font:600 13px var(--font-display); }
+.reel-head small { font-size:9px; text-transform:uppercase; letter-spacing:.1em; color:var(--muted-foreground); }
+.reel-profile { margin-left:auto; height:30px; font-size:11px; }
+.reel-video { position:relative; aspect-ratio:362 / 450; overflow:hidden; background:var(--ink); }
+.reel-video iframe { position:absolute; left:0; top:-54px; width:100%; height:calc(100% + 400px); border:0; }
+.reel-foot { display:flex; align-items:center; gap:8px; padding:14px; font-size:11px; color:var(--muted-foreground); border-top:1px solid var(--border); transition:color .2s; }
+.reel-foot:hover { color:var(--foreground); }
+.reel-foot svg { width:14px; height:14px; }
+.reel-foot svg:last-child { margin-left:auto; }
+@media(max-width:1000px) { .reel-card { flex:0 0 330px; scroll-snap-align:start; } }
+@media(max-width:700px) { .reel-card { flex-basis:86%; } }
