@@ -312,3 +312,10 @@ a.agency-badge:hover { border-color:var(--primary); }
 .hero-v2 h1 { font-size:clamp(64px,9.4vw,150px); } @media(max-width:700px){ .hero-v2 h1 { font-size:66px; } }
 html, body { max-width:100%; overflow-x:clip; }
 @media(max-width:700px){ [class*="reel"] { min-width:0; max-width:100%; } .reel-card { width:100%; } }
+.hero-v2 { align-items:center; padding-right:0; text-align:center; }
+.hero-lockup, .hero-v2 .hero-actions { margin:0 auto; width:min(900px,90vw); align-items:center; }
+.hero-v2 .hero-actions { margin-top:40px; justify-content:center; }
+.hero-lockup-top { justify-content:center; }
+.hero-script { margin:0; }
+.hero-lockup-bottom { justify-content:center; }
+@media(max-width:700px){ .hero-lockup, .hero-v2 .hero-actions { margin:0 auto; width:90vw; } .hero-script { margin:0; } }
