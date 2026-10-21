@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { ArrowUpRight, ArrowDown, ArrowUp, Menu, X, Instagram, MessageCircle, Copyright, PenLine, Scissors, CalendarDays, ShieldAlert, Video, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { ProjectCase, type CaseClient } from '@/components/ProjectCase';
-import heroImage from '@/assets/red-editorial.jpg';
+import heroImage from '@/assets/hero-enzo.jpg';
 import sealImage from '@/assets/seal-check.png';
 import kmposLogo from '@/assets/clients/kmpos-logo.png.asset.json';
 import enzoPhoto from '@/assets/clients/enzo-campos-2.jpg.asset.json';
