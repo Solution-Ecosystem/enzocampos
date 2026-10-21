@@ -3,6 +3,6 @@ import { whatsappUrl } from '@/lib/contact';
 
 describe('Contato', () => {
   it('abre o WhatsApp do Enzo no número (11) 98637-2751', () => {
-    expect(whatsappUrl('Oi').startsWith('https://wa.me/5511986372751?text=')).toBe(true);
+    expect(whatsappUrl('Oi').startsWith('https://api.whatsapp.com/send?phone=5511986372751&text=')).toBe(true);
   });
 });
