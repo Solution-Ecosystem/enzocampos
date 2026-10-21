@@ -51,14 +51,14 @@ export type ProjectStats = {
 
 /** Deterministic per client + period so server and browser render the same numbers. */
 export function getProjectStats(clientId: string, period: Period): ProjectStats {
-  const base = baseStats[clientId] ?? baseStats.oguxhta;
-  const conf = PERIODS.find(p => p.id === period) ?? PERIODS[1];
+  const base: BaseStats = baseStats[clientId] ?? baseStats['oguxhta']!;
+  const conf = PERIODS.find(p => p.id === period) ?? PERIODS[1]!;
   const views = Math.round(base.views * conf.factor);
   const rand = seeded(hash(`${clientId}-${period}`));
   const weights = Array.from({ length: conf.points }, (_, i) => (0.45 + (i / conf.points) * 1.1) * (0.78 + rand() * 0.44));
   const total = weights.reduce((sum, w) => sum + w, 0);
   const series = weights.map((w, i) => ({
-    label: period === '7d' ? WEEKDAYS[i] : period === '6m' ? MONTHS[i] : String(i + 1).padStart(2, '0'),
+    label: (period === '7d' ? WEEKDAYS[i] : period === '6m' ? MONTHS[i] : undefined) ?? String(i + 1).padStart(2, '0'),
     views: Math.round((w / total) * views),
   }));
   return {
