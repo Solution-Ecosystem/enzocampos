@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { ArrowUpRight, ArrowDown, ArrowUp, Menu, X, Instagram, MessageCircle, Copyright } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import heroImage from '@/assets/red-editorial.jpg';
-import { INSTAGRAM_HANDLE, INSTAGRAM_URL, whatsappUrl } from '@/lib/contact';
+import { INSTAGRAM_HANDLE, INSTAGRAM_URL, WHATSAPP_DISPLAY, openExternal, whatsappUrl } from '@/lib/contact';
 import alemao1 from '@/assets/clients/oalemaoluiz-1.jpg.asset.json';
 import alemao3 from '@/assets/clients/oalemaoluiz-3.jpg.asset.json';
 import alemao4 from '@/assets/clients/oalemaoluiz-4.jpg.asset.json';
@@ -60,10 +60,10 @@ function Portfolio() {
       <header className="site-header" id="inicio">
         <a className="wordmark" href="#inicio" aria-label="enzokmpos, início">enzokmpos<span>®</span></a>
         <nav className="desktop-nav" aria-label="Navegação principal"><a href="#projetos">Projetos</a><a href="#sobre">Sobre mim</a><a href="#servicos">O que eu faço</a><a href="#redes">Redes sociais</a></nav>
-        <a href={whatsapp} target="_blank" rel="noopener noreferrer" className="header-contact">Vamos conversar <ArrowUpRight /></a>
+        <a href={whatsapp} target="_blank" rel="noopener noreferrer" onClick={e => openExternal(e, whatsapp)} className="header-contact">Vamos conversar <ArrowUpRight /></a>
         <Button className="mobile-menu" variant="ghost" size="icon" aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'} aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? <X /> : <Menu />}</Button>
       </header>
-      {menuOpen && <nav className="mobile-nav" aria-label="Navegação móvel">{[['Projetos', 'projetos'], ['Sobre mim', 'sobre'], ['O que eu faço', 'servicos'], ['Redes sociais', 'redes']].map(([label, id]) => <a key={id} href={`#${id}`} onClick={() => setMenuOpen(false)}>{label}</a>)}<a href={whatsapp} target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)}>Vamos conversar</a></nav>}
+      {menuOpen && <nav className="mobile-nav" aria-label="Navegação móvel">{[['Projetos', 'projetos'], ['Sobre mim', 'sobre'], ['O que eu faço', 'servicos'], ['Redes sociais', 'redes']].map(([label, id]) => <a key={id} href={`#${id}`} onClick={() => setMenuOpen(false)}>{label}</a>)}<a href={whatsapp} target="_blank" rel="noopener noreferrer" onClick={e => openExternal(e, whatsapp)} onClick={e => { setMenuOpen(false); openExternal(e, whatsapp); }}>Vamos conversar</a></nav>}
       <main>
         <section className="hero" aria-label="Portfólio Enzo Campos">
           <img src={heroImage} alt="Composição editorial em tecido vermelho com luz e movimento" className="hero-image" width={1920} height={1024} fetchPriority="high" />
@@ -88,15 +88,15 @@ function Portfolio() {
         <section className="section" id="servicos"><div className="section-eyebrow">03 / O que eu faço</div><div className="section-heading"><h2 className="section-title">Da ideia à<br /><em>presença digital.</em></h2><p>Tudo o que eu faço com meus clientes, do roteiro ao gerenciamento de crise.</p></div><div className="service-list">{services.map((item, i) => <div className="service-row" key={item.name}><span className="service-number">0{i + 1}</span><h3>{item.name}</h3><p>{item.description}</p><ArrowUpRight /></div>)}</div></section>
         <section className="about-band" id="redes"><div className="section">
           <div className="section-eyebrow">04 / Redes sociais</div>
-          <div className="section-heading"><h2 className="section-title">Me acompanhe<br /><em>no Instagram.</em></h2><Button asChild variant="outline" className="social-button"><a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer"><Instagram /> {INSTAGRAM_HANDLE} <ArrowUpRight /></a></Button></div>
+          <div className="section-heading"><h2 className="section-title">Me acompanhe<br /><em>no Instagram.</em></h2><Button asChild variant="outline" className="social-button"><a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" onClick={e => openExternal(e, INSTAGRAM_URL)}><Instagram /> {INSTAGRAM_HANDLE} <ArrowUpRight /></a></Button></div>
           <div className="reel-grid">{reels.map((id, i) => <div className="reel-frame" key={id}><iframe src={`https://www.instagram.com/reel/${id}/embed/`} title={`Reel ${i + 1} de Enzo Campos no Instagram`} loading="lazy" allow="encrypted-media; picture-in-picture; clipboard-write" allowFullScreen /></div>)}</div>
         </div></section>
-        <section className="contact-section" id="contato"><div className="section"><div className="section-eyebrow">05 / Próxima conexão</div><div className="contact-top"><div><h2>Sua marca tem uma história.<br /><span>Vamos contar?</span></h2><p>O próximo projeto pode começar com uma conversa no WhatsApp.</p></div><Button asChild variant="outline" className="contact-circle"><a href={whatsapp} target="_blank" rel="noopener noreferrer" aria-label="Conversar com Enzo no WhatsApp"><ArrowUpRight /></a></Button></div><Button asChild className="mt-5"><a href={whatsapp} target="_blank" rel="noopener noreferrer"><MessageCircle /> Vamos conversar no WhatsApp</a></Button></div></section>
+        <section className="contact-section" id="contato"><div className="section"><div className="section-eyebrow">05 / Próxima conexão</div><div className="contact-top"><div><h2>Sua marca tem uma história.<br /><span>Vamos contar?</span></h2><p>O próximo projeto pode começar com uma conversa no WhatsApp: <strong className="text-foreground">{WHATSAPP_DISPLAY}</strong></p></div><Button asChild variant="outline" className="contact-circle"><a href={whatsapp} target="_blank" rel="noopener noreferrer" onClick={e => openExternal(e, whatsapp)} aria-label="Conversar com Enzo no WhatsApp"><ArrowUpRight /></a></Button></div><Button asChild className="mt-5"><a href={whatsapp} target="_blank" rel="noopener noreferrer" onClick={e => openExternal(e, whatsapp)}><MessageCircle /> Vamos conversar no WhatsApp</a></Button></div></section>
       </main>
       <footer className="site-footer">
         <div className="footer-top">
           <div className="footer-brand"><a className="wordmark" href="#inicio">enzokmpos<span>®</span></a><span>Enzo Campos · Social Media</span></div>
-          <nav className="footer-links" aria-label="Redes e contato"><a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer"><Instagram size={14} /> Instagram</a><a href={whatsapp} target="_blank" rel="noopener noreferrer"><MessageCircle size={14} /> WhatsApp</a></nav>
+          <nav className="footer-links" aria-label="Redes e contato"><a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" onClick={e => openExternal(e, INSTAGRAM_URL)}><Instagram size={14} /> Instagram</a><a href={whatsapp} target="_blank" rel="noopener noreferrer" onClick={e => openExternal(e, whatsapp)}><MessageCircle size={14} /> WhatsApp {WHATSAPP_DISPLAY}</a></nav>
           <a href="#inicio" className="back-to-top">De volta ao topo <ArrowUp size={13} /></a>
         </div>
         <div className="footer-legal">
@@ -122,7 +122,7 @@ function ClientCard({ client }: { client: Client }) {
   return (
     <article className="project-card">
       {client.url
-        ? <a className="project-link" href={client.url} target="_blank" rel="noopener noreferrer" aria-label={`Ver o Instagram de ${client.name} (${client.handle})`}>{content}</a>
+        ? <a className="project-link" href={client.url} target="_blank" rel="noopener noreferrer" onClick={e => openExternal(e, client.url!)} aria-label={`Ver o Instagram de ${client.name} (${client.handle})`}>{content}</a>
         : content}
     </article>
   );
