@@ -5,8 +5,9 @@ import { Button } from '@/components/ui/button';
 import { ProjectCase, type CaseClient } from '@/components/ProjectCase';
 import heroImage from '@/assets/red-editorial.jpg';
 import sealImage from '@/assets/seal-check.png';
+import kmposLogo from '@/assets/clients/kmpos-logo.png.asset.json';
 import enzoPhoto from '@/assets/clients/enzo-campos-2.jpg.asset.json';
-import { EMAIL, INSTAGRAM_HANDLE, INSTAGRAM_URL, WHATSAPP_DISPLAY, openExternal, whatsappUrl } from '@/lib/contact';
+import { EMAIL, INSTAGRAM_HANDLE, INSTAGRAM_URL, AGENCY_URL, WHATSAPP_DISPLAY, openExternal, whatsappUrl } from '@/lib/contact';
 import alemao1 from '@/assets/clients/oalemaoluiz-1.jpg.asset.json';
 import alemao3 from '@/assets/clients/oalemaoluiz-3.jpg.asset.json';
 import alemao4 from '@/assets/clients/oalemaoluiz-4.jpg.asset.json';
@@ -106,7 +107,7 @@ function Portfolio() {
           <div className="about-panel">
             <figure className="about-photo">
               <img src={enzoPhoto.url} alt="Enzo Campos" width={640} height={641} loading="lazy" />
-              <figcaption>THE<br />REAL ONE</figcaption>
+              <figcaption>Enzo<br />Kmpos</figcaption>
               <img className="about-seal" src={sealImage} alt="" aria-hidden="true" width={816} height={816} loading="lazy" />
             </figure>
             <div className="about-info">
@@ -135,6 +136,7 @@ function Portfolio() {
                   <p>Português</p>
                 </div>
               </div>
+              <AgencyBadge />
             </div>
           </div>
           <div className="about-texts"><p><strong>Sua marca merece ser vista. E lembrada.</strong> Sou Enzo Campos, da Kmpos Agency. Pego perfis parados, perdidos ou começando do zero e transformo em presença online de verdade.</p><p><strong>Por que isso importa?</strong> Antes de ligar ou comprar, o cliente te procura no Instagram. Posicionamento é a diferença entre ser mais uma opção e ser a escolha.</p></div>
@@ -160,4 +162,15 @@ function Portfolio() {
       </footer>
     </>
   );
+}
+
+function AgencyBadge() {
+  const inner = <>
+    <img src={kmposLogo.url} alt="Logo da Kmpos Agency" width={600} height={600} loading="lazy" />
+    <span><small>Faz parte da</small><strong>KMPOS AGENCY</strong><em>Social media, conteúdo e posicionamento para marcas que querem ser lembradas.</em></span>
+    {AGENCY_URL && <ArrowUpRight aria-hidden="true" />}
+  </>;
+  return AGENCY_URL
+    ? <a className="agency-badge" href={AGENCY_URL} target="_blank" rel="noopener noreferrer" onClick={e => openExternal(e, AGENCY_URL)} aria-label="Visitar o site da Kmpos Agency">{inner}</a>
+    : <div className="agency-badge">{inner}</div>;
 }

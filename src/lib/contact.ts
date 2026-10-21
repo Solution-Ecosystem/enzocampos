@@ -1,6 +1,8 @@
 export const WHATSAPP_NUMBER = '5511986372751';
 export const WHATSAPP_DISPLAY = '(11) 98637-2751';
 export const INSTAGRAM_URL = 'https://www.instagram.com/enzokmpos/';
+/** Kmpos Agency website — fill in when the site is live; the logo in "Sobre mim" becomes a link. */
+export const AGENCY_URL: string = '';
 export const EMAIL = 'enzokmposbussines@gmail.com';
 export const INSTAGRAM_HANDLE = '@enzokmpos';
 
