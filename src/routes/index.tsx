@@ -1,12 +1,12 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { useState } from 'react';
-import { ArrowUpRight, ArrowDown, ArrowUp, Menu, X, Instagram, MessageCircle, Copyright, PenLine, Scissors, CalendarDays, ShieldAlert } from 'lucide-react';
+import { ArrowUpRight, ArrowDown, ArrowUp, Menu, X, Instagram, MessageCircle, Copyright, PenLine, Scissors, CalendarDays, ShieldAlert, Video, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { ProjectCase, type CaseClient } from '@/components/ProjectCase';
 import heroImage from '@/assets/red-editorial.jpg';
 import sealImage from '@/assets/seal-check.png';
-import enzoPhoto from '@/assets/clients/enzo-campos.jpg.asset.json';
-import { INSTAGRAM_HANDLE, INSTAGRAM_URL, WHATSAPP_DISPLAY, openExternal, whatsappUrl } from '@/lib/contact';
+import enzoPhoto from '@/assets/clients/enzo-campos-2.jpg.asset.json';
+import { EMAIL, INSTAGRAM_HANDLE, INSTAGRAM_URL, WHATSAPP_DISPLAY, openExternal, whatsappUrl } from '@/lib/contact';
 import alemao1 from '@/assets/clients/oalemaoluiz-1.jpg.asset.json';
 import alemao3 from '@/assets/clients/oalemaoluiz-3.jpg.asset.json';
 import alemao4 from '@/assets/clients/oalemaoluiz-4.jpg.asset.json';
@@ -54,7 +54,17 @@ const focusAreas = [
   { label: 'Edição', Icon: Scissors },
   { label: 'Cronograma', Icon: CalendarDays },
   { label: 'Crise', Icon: ShieldAlert },
+  { label: 'Captação', Icon: Video },
 ];
+const experience = [
+  ['Roteiro e edição', 'Alemão Luiz / Influenciador'],
+  ['Gestão de perfil', 'Dudu Footz / Influenciador'],
+  ['Conteúdo e cronograma', 'Menina do Bolo / Doceria'],
+  ['Social media', 'Fe Castro / Cantor'],
+  ['Social media', 'Oguxhta / Cantor'],
+];
+const skills = ['Captação de vídeo', 'Edição dinâmica', 'Roteiros sob medida', 'Artes para marca', 'Cronogramas de postagem', 'Posicionamento nas redes', 'Gerenciamento de crise', 'Grupo de ação e UP'];
+const offers = ['Captação de vídeo', 'Edição que prende do início ao fim', 'Roteiros sob medida para qualquer nicho', 'Artes com a cara da sua marca', 'Cronograma de postagens'];
 const reels = ['DduYEoCB6qZ', 'DdKb0NMhaCy', 'DczJzTrhOBB'];
 
 function Portfolio() {
@@ -95,13 +105,14 @@ function Portfolio() {
           <div className="section-eyebrow">02 / Por trás das ideias</div>
           <div className="about-panel">
             <figure className="about-photo">
-              <img src={enzoPhoto.url} alt="Enzo Campos" width={360} height={640} loading="lazy" />
+              <img src={enzoPhoto.url} alt="Enzo Campos" width={640} height={641} loading="lazy" />
               <figcaption>THE<br />REAL ONE</figcaption>
               <img className="about-seal" src={sealImage} alt="" aria-hidden="true" width={816} height={816} loading="lazy" />
             </figure>
             <div className="about-info">
               <p className="about-kicker">SOBRE <strong>MIM</strong></p>
               <h2 className="about-hello">OLÁ!</h2>
+              <p className="about-lead">Transformo perfis parados ou começando do zero em presença online de verdade.</p>
               <div className="about-grid">
                 <div>
                   <h3>NAS REDES</h3>
@@ -111,13 +122,13 @@ function Portfolio() {
                 </div>
                 <div>
                   <h3>EXPERIÊNCIA</h3>
-                  <ul className="about-list">{clients.map(client => <li key={client.id}><span>Social media <small>Instagram</small></span>{client.name} / {client.role.split(' · ')[0]}</li>)}</ul>
+                  <ul className="about-list">{experience.map(([role, who]) => <li key={who}><span>{role} <small>Instagram</small></span>{who}</li>)}</ul>
                 </div>
               </div>
               <div className="about-grid about-grid-bottom">
                 <div>
                   <h3>HABILIDADES</h3>
-                  <ul className="about-skills">{services.map(item => <li key={item.name}>{item.name}</li>)}</ul>
+                  <ul className="about-skills">{skills.map(item => <li key={item}>{item}</li>)}</ul>
                 </div>
                 <div>
                   <h3>IDIOMAS</h3>
@@ -126,20 +137,20 @@ function Portfolio() {
               </div>
             </div>
           </div>
-          <div className="about-texts"><p><strong>Entre uma boa ideia e uma conexão de verdade, existe intenção.</strong> É nesse espaço que eu crio: unindo estratégia, roteiro e edição para dar personalidade à presença digital de cada cliente.</p><p>Meu olhar vai além de um feed bonito. Acredito em uma comunicação que tem o que dizer, sabe com quem está falando e encontra a sua própria forma de fazer isso.</p></div>
+          <div className="about-texts"><p><strong>Sua marca merece ser vista. E lembrada.</strong> Sou Enzo Campos, da Kmpos Agency. Pego perfis parados, perdidos ou começando do zero e transformo em presença online de verdade.</p><p><strong>Por que isso importa?</strong> Antes de ligar ou comprar, o cliente te procura no Instagram. Posicionamento é a diferença entre ser mais uma opção e ser a escolha.</p></div>
         </div></section>
-        <section className="section" id="servicos"><div className="section-eyebrow">03 / O que eu faço</div><div className="section-heading"><h2 className="section-title">Da ideia à<br /><em>presença digital.</em></h2><p>Tudo o que eu faço com meus clientes, do roteiro ao gerenciamento de crise.</p></div><div className="service-list">{services.map((item, i) => <div className="service-row" key={item.name}><span className="service-number">0{i + 1}</span><h3>{item.name}</h3><p>{item.description}</p><ArrowUpRight /></div>)}</div></section>
+        <section className="section" id="servicos"><div className="section-eyebrow">03 / O que eu faço</div><div className="section-heading"><h2 className="section-title">Da ideia à<br /><em>presença digital.</em></h2><p>Tudo o que eu faço com meus clientes, do roteiro ao gerenciamento de crise.</p></div><div className="offer-block"><div><h3>O que eu faço por você</h3><ul>{offers.map(item => <li key={item}>{item}</li>)}</ul></div><p><strong>Nichos atendidos:</strong> advocacia, contabilidade, doceria, eventos corporativos, chá de bebê, aniversários, jogos esportivos e influenciadores. Cada nicho tem sua linguagem, e eu aprendo a falar a sua.</p></div><div className="service-list">{services.map((item, i) => <div className="service-row" key={item.name}><span className="service-number">0{i + 1}</span><h3>{item.name}</h3><p>{item.description}</p><ArrowUpRight /></div>)}</div></section>
         <section className="about-band" id="redes"><div className="section">
           <div className="section-eyebrow">04 / Redes sociais</div>
           <div className="section-heading"><h2 className="section-title">Me acompanhe<br /><em>no Instagram.</em></h2><Button asChild variant="outline" className="social-button"><a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" onClick={e => openExternal(e, INSTAGRAM_URL)}><Instagram /> {INSTAGRAM_HANDLE} <ArrowUpRight /></a></Button></div>
           <div className="reel-grid">{reels.map((id, i) => <div className="reel-frame" key={id}><iframe src={`https://www.instagram.com/reel/${id}/embed/`} title={`Reel ${i + 1} de Enzo Campos no Instagram`} loading="lazy" allow="encrypted-media; picture-in-picture; clipboard-write" allowFullScreen /></div>)}</div>
         </div></section>
-        <section className="contact-section" id="contato"><div className="section"><div className="section-eyebrow">05 / Próxima conexão</div><div className="contact-top"><div><h2>Sua marca tem uma história.<br /><span>Vamos contar?</span></h2><p>O próximo projeto pode começar com uma conversa no WhatsApp: <strong className="text-foreground">{WHATSAPP_DISPLAY}</strong></p></div><Button asChild variant="outline" className="contact-circle"><a href={whatsapp} target="_blank" rel="noopener noreferrer" onClick={e => openExternal(e, whatsapp)} aria-label="Conversar com Enzo no WhatsApp"><ArrowUpRight /></a></Button></div><Button asChild className="mt-5"><a href={whatsapp} target="_blank" rel="noopener noreferrer" onClick={e => openExternal(e, whatsapp)}><MessageCircle /> Vamos conversar no WhatsApp</a></Button></div></section>
+        <section className="contact-section" id="contato"><div className="section"><div className="section-eyebrow">05 / Próxima conexão</div><div className="contact-top"><div><h2>Bora tirar sua ideia<br /><span>do papel?</span></h2><p>O primeiro passo é uma conversa rápida, sem compromisso.</p><p>WhatsApp: <strong className="text-foreground">{WHATSAPP_DISPLAY}</strong> · E-mail: <a className="text-foreground underline" href={`mailto:${EMAIL}`}>{EMAIL}</a></p></div><Button asChild variant="outline" className="contact-circle"><a href={whatsapp} target="_blank" rel="noopener noreferrer" onClick={e => openExternal(e, whatsapp)} aria-label="Conversar com Enzo no WhatsApp"><ArrowUpRight /></a></Button></div><Button asChild className="mt-5"><a href={whatsapp} target="_blank" rel="noopener noreferrer" onClick={e => openExternal(e, whatsapp)}><MessageCircle /> Vamos conversar no WhatsApp</a></Button></div></section>
       </main>
       <footer className="site-footer">
         <div className="footer-top">
           <div className="footer-brand"><a className="wordmark" href="#inicio">enzokmpos<span>®</span></a><span>Enzo Campos · Social Media</span></div>
-          <nav className="footer-links" aria-label="Redes e contato"><a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" onClick={e => openExternal(e, INSTAGRAM_URL)}><Instagram size={14} /> Instagram</a><a href={whatsapp} target="_blank" rel="noopener noreferrer" onClick={e => openExternal(e, whatsapp)}><MessageCircle size={14} /> WhatsApp {WHATSAPP_DISPLAY}</a></nav>
+          <nav className="footer-links" aria-label="Redes e contato"><a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" onClick={e => openExternal(e, INSTAGRAM_URL)}><Instagram size={14} /> Instagram</a><a href={whatsapp} target="_blank" rel="noopener noreferrer" onClick={e => openExternal(e, whatsapp)}><MessageCircle size={14} /> WhatsApp {WHATSAPP_DISPLAY}</a><a href={`mailto:${EMAIL}`}><Mail size={14} /> {EMAIL}</a></nav>
           <a href="#inicio" className="back-to-top">De volta ao topo <ArrowUp size={13} /></a>
         </div>
         <div className="footer-legal">
