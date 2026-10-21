@@ -4,4 +4,6 @@
 - [x] Expand "O que eu faço" with all services.
 - [x] Header wordmark "enzokmpos", social section with 3 reels.
 - [x] WhatsApp contact links, footer with Solution Ecosystem copyright (Lei 9.610/98).
+- [x] Each project in its own section with animated views chart (illustrative numbers).
+- [ ] Real view numbers per client — waiting on the video from the user.
 - [ ] Oguxhta: profile link/photos — waiting on correct Instagram link from user.
