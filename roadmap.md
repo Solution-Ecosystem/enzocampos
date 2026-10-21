@@ -7,3 +7,4 @@
 - [x] Each project in its own section with animated views chart (illustrative numbers).
 - [ ] Real view numbers per client — waiting on the video from the user.
 - [ ] Oguxhta: profile link/photos — waiting on correct Instagram link from user.
+- [ ] Mobile responsive pass; Oguxhta→Obigzin with 3 reels; hero name EnzoKmpos; chip 'Cliente' for Alemão/Dudu/Fe/Obigzin; new colors #FF5A1F/#0F0F12/#F5F5F2
