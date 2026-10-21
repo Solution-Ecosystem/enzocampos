@@ -320,3 +320,13 @@ html, body { max-width:100%; overflow-x:clip; }
 .hero-lockup-bottom { justify-content:center; }
 @media(max-width:700px){ .hero-lockup, .hero-v2 .hero-actions { margin:0 auto; width:90vw; } .hero-script { margin:0; } }
 .case-posters { max-width:720px; margin-left:auto; margin-right:auto; gap:16px; } .case-poster { aspect-ratio:1 / 1; border-radius:12px; } @media(max-width:700px){ .case-posters { gap:8px; } }
+.case-posters-reels { max-width:none; gap:20px; }
+@media(max-width:700px) {
+  .case-chips { margin:10px 0 20px 4px; }
+  .case-posters-reels { display:flex; overflow-x:auto; scroll-snap-type:x mandatory; gap:12px; margin-left:-18px; margin-right:-18px; padding:22px 18px 6px; scrollbar-width:none; }
+  .case-posters-reels::before { display:none; }
+  .case-posters-reels .case-reel { flex:0 0 78%; scroll-snap-align:center; }
+  .footer-links { flex-direction:column; gap:12px; }
+  .footer-links a { overflow-wrap:anywhere; }
+  .footer-top { gap:16px; }
+}
