@@ -83,16 +83,22 @@ function Portfolio() {
       </header>
       {menuOpen && <nav className="mobile-nav" aria-label="Navegação móvel">{[['Projetos', 'projetos'], ['Sobre mim', 'sobre'], ['O que eu faço', 'servicos'], ['Redes sociais', 'redes']].map(([label, id]) => <a key={id} href={`#${id}`} onClick={() => setMenuOpen(false)}>{label}</a>)}<a href={whatsapp} target="_blank" rel="noopener noreferrer" onClick={e => { setMenuOpen(false); openExternal(e, whatsapp); }}>Vamos conversar</a></nav>}
       <main>
-        <section className="hero" aria-label="Portfólio Enzo Campos">
-          <img src={heroImage} alt="Composição editorial em tecido vermelho com luz e movimento" className="hero-image" width={1920} height={1024} fetchPriority="high" />
-          <div className="hero-content">
-            <div className="hero-topline"><span className="status-dot" /> Criatividade com intenção. Conexões de verdade.</div>
-            <div className="hero-name-row"><div className="hero-name">Enzo Campos<br />Social Media</div><span className="hero-year">SELEÇÃO DE TRABALHOS / 2026</span></div>
+        <section className="hero hero-v2" aria-label="Portfólio Enzo Campos">
+          <img src={heroImage} alt="Enzo Campos em retrato vermelho com efeito de movimento" className="hero-image" width={1584} height={672} fetchPriority="high" />
+          <div className="hero-lockup">
+            <div className="hero-lockup-top">
+              <span className="hero-meta">2026<br />Social Media</span>
+              <span className="hero-script">Enzo Campos</span>
+              <span className="hero-brand">KMPOS</span>
+            </div>
             <h1>PORTFÓLIO</h1>
-            <div className="hero-bottom"><p className="hero-description">Transformo ideias em conteúdo.<br />E conteúdo em conexões que ficam.</p><span className="hero-specialty">ROTEIRO + EDIÇÃO + POSICIONAMENTO<br />ESTRATÉGIA PARA QUEM VIVE DAS REDES.</span></div>
-            <div className="hero-actions"><a href="#projetos">Explore os projetos <ArrowDown /></a><a href="#sobre">Um pouco sobre mim <ArrowUpRight /></a></div>
+            <div className="hero-lockup-bottom">
+              <div className="pattern-strip" aria-hidden="true">{Array.from({ length: 16 }, (_, i) => <i key={i} />)}</div>
+              <p>Criatividade com intenção,<br />conexões de verdade e muito conteúdo.</p>
+              <span className="hero-meta">Portfólio</span>
+            </div>
           </div>
-          <div className="pattern-strip" aria-hidden="true">{Array.from({ length: 16 }, (_, i) => <i key={i} />)}</div>
+          <div className="hero-actions"><a href="#projetos">Explore os projetos <ArrowDown /></a><a href="#sobre">Um pouco sobre mim <ArrowUpRight /></a></div>
         </section>
         <div className="ticker" aria-hidden="true"><div className="ticker-track">{['Social media', 'Roteiros', 'Edições', 'Posicionamento', 'Gerenciamento de crise'].map(text => <span className="contents" key={text}><span>{text}</span><span className="ticker-star">✳</span></span>)}</div></div>
         <section className="section" id="projetos">
