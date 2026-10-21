@@ -43,6 +43,11 @@
   --blue: oklch(0.55 0.19 265);
   --green: oklch(0.67 0.15 155);
   --overlay: oklch(0.05 0 0 / 85%);
+  --curtain: repeating-linear-gradient(90deg, oklch(0.09 0 0) 0 18px, oklch(0.16 0.003 30) 30px, oklch(0.1 0 0) 44px, oklch(0.2 0.003 30) 52px, oklch(0.09 0 0) 70px);
+  --curtain-shade: radial-gradient(ellipse at 50% 0%, oklch(0.3 0.01 30 / 35%), transparent 60%), linear-gradient(180deg, oklch(0.05 0 0 / 20%), oklch(0.05 0 0 / 75%));
+  --chip: oklch(0.97 0.003 80);
+  --chip-foreground: oklch(0.12 0 0);
+  --shadow-photo: 0 30px 60px -20px oklch(0 0 0 / 70%);
 }
 @layer base {
   * { box-sizing: border-box; border-color: var(--border); letter-spacing: 0; }
@@ -158,6 +163,35 @@
 .footer-legal { display:flex; gap:12px; align-items:flex-start; padding-top:22px; }
 .footer-legal svg { width:16px; height:16px; flex-shrink:0; color:var(--primary); margin-top:2px; }
 .footer-legal p { margin:0; font-size:10px; line-height:1.8; max-width:860px; }
+.about-stage { background:var(--background); border-block:1px solid var(--border); }
+.about-panel { position:relative; display:grid; grid-template-columns:minmax(260px,.8fr) 1.4fr; gap:56px; align-items:center; padding:56px; border-radius:28px; border:1px solid var(--border); background:var(--curtain-shade), var(--curtain); overflow:hidden; }
+.about-photo { position:relative; margin:0; aspect-ratio:.74; border-radius:28px; border:3px solid var(--chip); box-shadow:var(--shadow-photo); }
+.about-photo > img:first-child { width:100%; height:100%; object-fit:cover; border-radius:25px; display:block; }
+.about-photo figcaption { position:absolute; left:22px; bottom:26px; font:800 30px/.95 var(--font-display); color:var(--foreground); text-shadow:0 2px 14px oklch(0 0 0 / 70%); }
+.about-seal { position:absolute; right:-44px; bottom:-34px; width:140px; height:140px; object-fit:contain; filter:drop-shadow(0 12px 18px oklch(0 0 0 / 60%)); }
+.about-kicker { font:300 44px/1 var(--font-display); margin:0; }
+.about-kicker strong { font-weight:700; font-style:italic; }
+.about-hello { font:800 104px/.95 var(--font-display); margin:6px 0 40px; }
+.about-grid { display:grid; grid-template-columns:1fr 1fr; gap:36px; }
+.about-grid-bottom { grid-template-columns:2fr 1fr; margin-top:32px; }
+.about-info h3 { font:700 25px/1 var(--font-display); margin:0 0 10px; }
+.about-info h3:not(:first-child) { margin-top:30px; }
+.about-info p, .about-list li, .about-skills li { font-size:14px; line-height:1.55; margin:0; color:var(--foreground); }
+.about-info p a { text-decoration:underline; text-underline-offset:3px; }
+.about-list, .about-skills { list-style:none; padding:0; margin:0; }
+.about-list li { margin-bottom:12px; }
+.about-list li span { display:block; font-weight:600; }
+.about-list li small { font-size:9px; text-transform:uppercase; color:var(--muted-foreground); margin-left:4px; }
+.about-skills { columns:2; column-gap:28px; }
+.about-tools { display:flex; gap:9px; flex-wrap:wrap; }
+.about-tools span { width:58px; height:58px; border-radius:12px; background:var(--chip); color:var(--chip-foreground); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; }
+.about-tools svg { width:22px; height:22px; }
+.about-tools small { font-size:8px; font-weight:700; text-transform:uppercase; }
+.about-texts { display:grid; grid-template-columns:1fr 1fr; gap:40px; margin-top:34px; }
+.about-texts p { margin:0; font-size:14px; line-height:1.9; color:var(--muted-foreground); }
+.about-texts strong { color:var(--foreground); font-weight:500; }
+@media(max-width:1000px) { .about-panel { grid-template-columns:1fr; padding:36px; gap:48px; } .about-photo { max-width:340px; } .about-hello { font-size:84px; } }
+@media(max-width:700px) { .about-panel { padding:22px 20px 30px; border-radius:20px; } .about-photo { max-width:none; margin-right:24px; } .about-seal { width:104px; height:104px; right:-26px; bottom:-26px; } .about-photo figcaption { font-size:24px; } .about-kicker { font-size:32px; } .about-hello { font-size:64px; margin-bottom:28px; } .about-grid, .about-grid-bottom, .about-texts { grid-template-columns:1fr; gap:4px; } .about-grid > div + div { margin-top:26px; } .about-info h3 { font-size:21px; } .about-skills { columns:1; } }
 @media(min-width:1440px) { .hero h1 { font-size:156px; } }
 @media(max-width:1000px) { .hero h1 { font-size:100px; } .hero { min-height:590px; } .about-layout { gap:40px; } .desktop-nav { gap:20px; } .reel-grid { display:flex; overflow-x:auto; scroll-snap-type:x mandatory; padding-bottom:10px; } .reel-frame { flex:0 0 330px; scroll-snap-align:start; } }
 @media(max-width:700px) {

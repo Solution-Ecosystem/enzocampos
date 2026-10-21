@@ -1,8 +1,10 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { useState } from 'react';
-import { ArrowUpRight, ArrowDown, ArrowUp, Menu, X, Instagram, MessageCircle, Copyright } from 'lucide-react';
+import { ArrowUpRight, ArrowDown, ArrowUp, Menu, X, Instagram, MessageCircle, Copyright, PenLine, Scissors, CalendarDays, ShieldAlert } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import heroImage from '@/assets/red-editorial.jpg';
+import sealImage from '@/assets/seal-check.png';
+import enzoPhoto from '@/assets/clients/enzo-campos.jpg.asset.json';
 import { INSTAGRAM_HANDLE, INSTAGRAM_URL, WHATSAPP_DISPLAY, openExternal, whatsappUrl } from '@/lib/contact';
 import alemao1 from '@/assets/clients/oalemaoluiz-1.jpg.asset.json';
 import alemao3 from '@/assets/clients/oalemaoluiz-3.jpg.asset.json';
@@ -47,6 +49,12 @@ const services = [
   { name: 'Posicionamento nas redes', description: 'Definição de tom, estética e narrativa para o perfil ser lembrado pelo que realmente é.' },
   { name: 'Gerenciamento de crise', description: 'Resposta rápida e estratégica para proteger a imagem em momentos delicados.' },
   { name: 'Grupo de ação e UP', description: 'Mobilização de grupos de engajamento para dar “up” nas publicações e ampliar o alcance.' },
+];
+const focus = [
+  { label: 'Roteiro', Icon: PenLine },
+  { label: 'Edição', Icon: Scissors },
+  { label: 'Cronograma', Icon: CalendarDays },
+  { label: 'Crise', Icon: ShieldAlert },
 ];
 const reels = ['DduYEoCB6qZ', 'DdKb0NMhaCy', 'DczJzTrhOBB'];
 
