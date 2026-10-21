@@ -22,7 +22,7 @@ export const baseStats: Record<string, BaseStats> = {
   dudu: { views: 12_600_000, reach: 6_350_000, followers: 64_200, engagement: 9.2, growth: 52 },
   bolo: { views: 624_000, reach: 318_000, followers: 3_920, engagement: 6.1, growth: 27 },
   fe: { views: 148_500, reach: 72_300, followers: 1_160, engagement: 8.4, growth: 44 },
-  oguxhta: { views: 96_400, reach: 51_200, followers: 870, engagement: 5.7, growth: 31 },
+  obigzin: { views: 96_400, reach: 51_200, followers: 870, engagement: 5.7, growth: 31 },
 };
 
 const WEEKDAYS = ['Qui', 'Sex', 'Sáb', 'Dom', 'Seg', 'Ter', 'Qua'];
@@ -51,7 +51,7 @@ export type ProjectStats = {
 
 /** Deterministic per client + period so server and browser render the same numbers. */
 export function getProjectStats(clientId: string, period: Period): ProjectStats {
-  const base: BaseStats = baseStats[clientId] ?? baseStats['oguxhta']!;
+  const base: BaseStats = baseStats[clientId] ?? baseStats['obigzin']!;
   const conf = PERIODS.find(p => p.id === period) ?? PERIODS[1]!;
   const views = Math.round(base.views * conf.factor);
   const rand = seeded(hash(`${clientId}-${period}`));
