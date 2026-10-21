@@ -87,16 +87,12 @@ function Portfolio() {
           <img src={heroImage} alt="Enzo Campos em retrato vermelho com efeito de movimento" className="hero-image" width={1584} height={672} fetchPriority="high" />
           <div className="hero-lockup">
             <div className="hero-lockup-top">
-              <span className="hero-meta">2026<br />Social Media</span>
-              <span className="hero-script">Enzo Campos</span>
-              <span className="hero-brand">KMPOS</span>
-            </div>
+                            <span className="hero-script">Enzo Campos</span>
+                          </div>
             <h1>PORTFÓLIO</h1>
             <div className="hero-lockup-bottom">
-              <div className="pattern-strip" aria-hidden="true">{Array.from({ length: 16 }, (_, i) => <i key={i} />)}</div>
               <p>Criatividade com intenção,<br />conexões de verdade e muito conteúdo.</p>
-              <span className="hero-meta">Portfólio</span>
-            </div>
+                          </div>
           </div>
           <div className="hero-actions"><a href="#projetos">Explore os projetos <ArrowDown /></a><a href="#sobre">Um pouco sobre mim <ArrowUpRight /></a></div>
         </section>
