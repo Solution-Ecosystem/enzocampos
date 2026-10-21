@@ -309,3 +309,4 @@ a.agency-badge:hover { border-color:var(--primary); }
 .hero-v2 .hero-image { object-position:20% 25%; }
 .hero-script { white-space:nowrap; }
 @media(max-width:700px) { .hero-v2 { align-items:flex-start; padding-right:0; } .hero-lockup, .hero-v2 .hero-actions { margin-left:6%; width:88vw; } .hero-v2 .hero-image { object-position:38% 30%; } .hero-brand { display:none; } .hero-lockup-top { margin-bottom:4px; } .hero-script { font-size:46px; margin-left:auto; } }
+.hero-v2 h1 { font-size:clamp(64px,9.4vw,150px); } @media(max-width:700px){ .hero-v2 h1 { font-size:66px; } }
