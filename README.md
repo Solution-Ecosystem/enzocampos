@@ -1,14 +1,21 @@
-# Welcome to your Lovable project
+# Enzocampos
+
+faça um portifolio para um social midia, vou enviar o nome da pessoa que é o dono do portifolio e em seguida vou enviar o link do exemplo como quero que o portifolio seja 
+
+nome: Enzo Campos
+link: https://www.behance.net/gallery/253508351/Portfolio-2026?tracking_source=search_projects|portfolio+social+media&l=19
 
 This project was built with [Lovable](https://lovable.dev).
 
+**Live app**: https://enzocampos.lovable.app
+
 ## Build with Lovable
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+Continue developing this project in the [Lovable editor](https://lovable.dev/projects/51cc6623-3707-43aa-a044-0c2c0544320a).
 
 - **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+- **Stay in sync**: every change made in Lovable is committed straight to this repository.
+- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
 
 ## Development
 
@@ -20,10 +27,3 @@ cd <repository-name>
 npm i
 npm run dev
 ```
-
-## Built with
-
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
