@@ -304,3 +304,8 @@ a.agency-badge:hover { border-color:var(--primary); }
 .hero-lockup-bottom .pattern-strip { position:static; transform:none; width:min(210px,30vw); height:52px; margin-left:-60px; flex-shrink:0; }
 .hero-v2 .hero-actions { position:relative; z-index:1; margin:44px 0 0 12%; width:min(760px,90vw); }
 @media(max-width:700px) { .hero-v2 { height:620px; } .hero-v2 .hero-image { object-position:45% 30%; } .hero-lockup, .hero-v2 .hero-actions { margin-left:6%; width:88vw; } .hero-meta { font-size:11px; } .hero-lockup-bottom .pattern-strip { margin-left:0; width:110px; height:36px; } .hero-lockup-bottom .pattern-strip i { height:18px; } .hero-v2 h1 { font-size:68px; } }
+.hero-v2 { align-items:flex-end; padding-right:7%; }
+.hero-lockup, .hero-v2 .hero-actions { margin-left:0; width:min(720px,58vw); }
+.hero-v2 .hero-image { object-position:20% 25%; }
+.hero-script { white-space:nowrap; }
+@media(max-width:700px) { .hero-v2 { align-items:flex-start; padding-right:0; } .hero-lockup, .hero-v2 .hero-actions { margin-left:6%; width:88vw; } .hero-v2 .hero-image { object-position:38% 30%; } .hero-brand { display:none; } .hero-lockup-top { margin-bottom:4px; } .hero-script { font-size:46px; margin-left:auto; } }
