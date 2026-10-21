@@ -169,7 +169,7 @@
 .about-photo > img:first-child { width:100%; height:100%; object-fit:cover; border-radius:25px; display:block; }
 .about-photo figcaption { position:absolute; left:22px; bottom:26px; font:800 30px/.95 var(--font-display); color:var(--foreground); text-shadow:0 2px 14px oklch(0 0 0 / 70%); }
 .about-seal { position:absolute; right:-44px; bottom:-34px; width:140px; height:140px; object-fit:contain; filter:drop-shadow(0 12px 18px oklch(0 0 0 / 60%)); }
-.about-kicker { font:300 44px/1 var(--font-display); margin:0; }
+.about-info .about-kicker { font:300 44px/1 var(--font-display); margin:0; }
 .about-kicker strong { font-weight:700; font-style:italic; }
 .about-hello { font:800 104px/.95 var(--font-display); margin:6px 0 40px; }
 .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:36px; }
@@ -184,14 +184,14 @@
 .about-list li small { font-size:9px; text-transform:uppercase; color:var(--muted-foreground); margin-left:4px; }
 .about-skills { columns:2; column-gap:28px; }
 .about-tools { display:flex; gap:9px; flex-wrap:wrap; }
-.about-tools span { width:58px; height:58px; border-radius:12px; background:var(--chip); color:var(--chip-foreground); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; }
+.about-tools span { width:68px; height:62px; border-radius:12px; background:var(--chip); color:var(--chip-foreground); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; }
 .about-tools svg { width:22px; height:22px; }
 .about-tools small { font-size:8px; font-weight:700; text-transform:uppercase; }
 .about-texts { display:grid; grid-template-columns:1fr 1fr; gap:40px; margin-top:34px; }
 .about-texts p { margin:0; font-size:14px; line-height:1.9; color:var(--muted-foreground); }
 .about-texts strong { color:var(--foreground); font-weight:500; }
 @media(max-width:1000px) { .about-panel { grid-template-columns:1fr; padding:36px; gap:48px; } .about-photo { max-width:340px; } .about-hello { font-size:84px; } }
-@media(max-width:700px) { .about-panel { padding:22px 20px 30px; border-radius:20px; } .about-photo { max-width:none; margin-right:24px; } .about-seal { width:104px; height:104px; right:-26px; bottom:-26px; } .about-photo figcaption { font-size:24px; } .about-kicker { font-size:32px; } .about-hello { font-size:64px; margin-bottom:28px; } .about-grid, .about-grid-bottom, .about-texts { grid-template-columns:1fr; gap:4px; } .about-grid > div + div { margin-top:26px; } .about-info h3 { font-size:21px; } .about-skills { columns:1; } }
+@media(max-width:700px) { .about-panel { padding:22px 20px 30px; border-radius:20px; } .about-photo { max-width:none; margin-right:24px; } .about-seal { width:104px; height:104px; right:-26px; bottom:-26px; } .about-photo figcaption { font-size:24px; } .about-info .about-kicker { font-size:32px; } .about-hello { font-size:64px; margin-bottom:28px; } .about-grid, .about-grid-bottom, .about-texts { grid-template-columns:1fr; gap:4px; } .about-grid > div + div { margin-top:26px; } .about-info h3 { font-size:21px; } .about-skills { columns:1; } }
 @media(min-width:1440px) { .hero h1 { font-size:156px; } }
 @media(max-width:1000px) { .hero h1 { font-size:100px; } .hero { min-height:590px; } .about-layout { gap:40px; } .desktop-nav { gap:20px; } .reel-grid { display:flex; overflow-x:auto; scroll-snap-type:x mandatory; padding-bottom:10px; } .reel-frame { flex:0 0 330px; scroll-snap-align:start; } }
 @media(max-width:700px) {
