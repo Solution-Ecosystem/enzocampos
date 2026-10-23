@@ -13,6 +13,8 @@ export type CaseClient = {
   chip?: string;
   /** Instagram reel ids shown instead of the photos. */
   reels?: string[];
+  /** Per-image links (e.g. reel URLs); defaults to the profile url. */
+  links?: string[];
 };
 
 function CountUp({ value, active, format }: { value: number; active: boolean; format: (n: number) => string }) {
@@ -119,7 +121,7 @@ export function ProjectCase({ client, index, total }: { client: CaseClient; inde
           ))
           : client.images.length > 0
           ? client.images.map((src, i) => (
-            <a key={src} href={client.url} target="_blank" rel="noopener noreferrer" onClick={open} className="case-poster" aria-label={`Abrir o Instagram de ${client.name}`}>
+            <a key={src} href={client.links?.[i] ?? client.url} target="_blank" rel="noopener noreferrer" onClick={e => openExternal(e, client.links?.[i] ?? client.url!)} className="case-poster" aria-label={`Abrir o Instagram de ${client.name}`}>
               <img src={src} alt={`Publicação em destaque ${i + 1} de ${client.name} no Instagram`} width={480} height={600} loading="lazy" />
             </a>
           ))
