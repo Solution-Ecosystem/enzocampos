@@ -109,7 +109,7 @@ function Portfolio() {
           <div className="about-panel">
             <figure className="about-photo">
               <img src={enzoPhoto.url} alt="Enzo Campos" width={640} height={641} loading="lazy" />
-              <figcaption>Enzo<br />Kmpos</figcaption>
+              <figcaption>Enzo<br />Campos</figcaption>
               <img className="about-seal" src={sealImage} alt="" aria-hidden="true" width={816} height={816} loading="lazy" />
             </figure>
             <div className="about-info">
