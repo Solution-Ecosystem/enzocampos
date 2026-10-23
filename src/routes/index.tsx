@@ -37,8 +37,8 @@ export const Route = createFileRoute('/')({
 });
 
 const clients: CaseClient[] = [
-  { id: 'alemao', name: 'Alemão Luiz', handle: '@oalemaoluiz', category: 'Influenciadores', chip: 'Cliente', role: 'Influenciador · Lifestyle, humor e futebol', audience: '406 mil seguidores', url: 'https://www.instagram.com/oalemaoluiz/', images: [alemao1, alemao3, alemao4], accent: 'blue', description: 'Social media completo para um influenciador de lifestyle, humor e futebol: roteiros, edições e cronograma pensados para manter a constância e fortalecer a conexão com o público.' },
   { id: 'dudu', name: 'Dudu Footz', handle: '@dudufootz', category: 'Influenciadores', chip: 'Cliente', role: 'Influenciador · Humor e futebol', audience: '2 milhões de seguidores', url: 'https://www.instagram.com/dudufootz/', images: [dudu1, dudu4, dudu3], accent: 'green', description: 'Estratégia de conteúdo para um perfil de humor e futebol com milhões de seguidores: posicionamento, roteiros com ganchos fortes e edição no ritmo das redes.' },
+  { id: 'alemao', name: 'Alemão Luiz', handle: '@oalemaoluiz', category: 'Influenciadores', chip: 'Cliente', role: 'Influenciador · Lifestyle, humor e futebol', audience: '406 mil seguidores', url: 'https://www.instagram.com/oalemaoluiz/', images: [alemao1, alemao3, alemao4], accent: 'blue', description: 'Social media completo para um influenciador de lifestyle, humor e futebol: roteiros, edições e cronograma pensados para manter a constância e fortalecer a conexão com o público.' },
   { id: 'bolo', name: 'Menina do Bolo', handle: '@meninadobolo_oficial', category: 'Doceria', role: 'Doceria · Confeitaria artesanal', audience: '35 mil seguidores', url: 'https://www.instagram.com/meninadobolo_oficial/', images: [bolo1, bolo4, bolo6], accent: 'pink', description: 'Presença digital para uma confeitaria artesanal: apresentação atrativa dos produtos, cronograma de postagens e uma identidade clara e consistente no feed.' },
   { id: 'fe', name: 'Fe Castro', handle: '@eufecastroo', category: 'Cantores', chip: 'Cliente', role: 'Cantor · Compositor', audience: '2,9 mil seguidores', url: 'https://www.instagram.com/eufecastroo/', images: [fe3, fe1, fe6], accent: 'sun', description: 'Posicionamento artístico para cantor e compositor: narrativa do perfil, divulgação de lançamentos e conteúdos que aproximam o artista de quem escuta.' },
   { id: 'obigzin', name: 'Obigzin', handle: '@obigzin', category: 'Cantores', chip: 'Cliente', role: 'Cantor · Luthier e produtor musical', audience: '2,3 mil seguidores', url: 'https://www.instagram.com/obigzin/', images: [obig1, obig2, obig3], links: ['https://www.instagram.com/reel/DV9ap-zBUeS/', 'https://www.instagram.com/reel/DWztCyihR1L/', 'https://www.instagram.com/reel/DZGQcM1p-Ek/'], accent: 'primary', description: 'Social media para cantor, luthier e produtor musical: roteiros, edições e estratégia de redes para dar voz e alcance à carreira musical.' },
@@ -61,8 +61,8 @@ const focusAreas = [
   { label: 'Captação', Icon: Video },
 ];
 const experience = [
-  ['Roteiro e edição', 'Alemão Luiz / Influenciador'],
   ['Gestão de perfil', 'Dudu Footz / Influenciador'],
+  ['Roteiro e edição', 'Alemão Luiz / Influenciador'],
   ['Conteúdo e cronograma', 'Menina do Bolo / Doceria'],
   ['Social media', 'Fe Castro / Cantor'],
   ['Social media', 'Obigzin / Cantor'],
