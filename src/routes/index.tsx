@@ -11,6 +11,9 @@ import { EMAIL, INSTAGRAM_HANDLE, INSTAGRAM_URL, AGENCY_URL, WHATSAPP_DISPLAY, o
 import alemao1 from '@/assets/clients/oalemaoluiz-1.jpg.asset.json';
 import alemao3 from '@/assets/clients/oalemaoluiz-3.jpg.asset.json';
 import alemao4 from '@/assets/clients/oalemaoluiz-4.jpg.asset.json';
+import obig1 from '@/assets/clients/obigzin-1.jpg.asset.json';
+import obig2 from '@/assets/clients/obigzin-2.jpg.asset.json';
+import obig3 from '@/assets/clients/obigzin-3.jpg.asset.json';
 import dudu1 from '@/assets/clients/dudufootz-1.jpg.asset.json';
 import dudu3 from '@/assets/clients/dudufootz-3.jpg.asset.json';
 import dudu4 from '@/assets/clients/dudufootz-4.jpg.asset.json';
@@ -38,7 +41,7 @@ const clients: CaseClient[] = [
   { id: 'dudu', name: 'Dudu Footz', handle: '@dudufootz', category: 'Influenciadores', chip: 'Cliente', role: 'Influenciador · Humor e futebol', audience: '2 milhões de seguidores', url: 'https://www.instagram.com/dudufootz/', images: [dudu1.url, dudu4.url, dudu3.url], accent: 'green', description: 'Estratégia de conteúdo para um perfil de humor e futebol com milhões de seguidores: posicionamento, roteiros com ganchos fortes e edição no ritmo das redes.' },
   { id: 'bolo', name: 'Menina do Bolo', handle: '@meninadobolo_oficial', category: 'Doceria', role: 'Doceria · Confeitaria artesanal', audience: '35 mil seguidores', url: 'https://www.instagram.com/meninadobolo_oficial/', images: [bolo1.url, bolo4.url, bolo6.url], accent: 'pink', description: 'Presença digital para uma confeitaria artesanal: apresentação atrativa dos produtos, cronograma de postagens e uma identidade clara e consistente no feed.' },
   { id: 'fe', name: 'Fe Castro', handle: '@eufecastroo', category: 'Cantores', chip: 'Cliente', role: 'Cantor · Compositor', audience: '2,9 mil seguidores', url: 'https://www.instagram.com/eufecastroo/', images: [fe3.url, fe1.url, fe6.url], accent: 'sun', description: 'Posicionamento artístico para cantor e compositor: narrativa do perfil, divulgação de lançamentos e conteúdos que aproximam o artista de quem escuta.' },
-  { id: 'obigzin', name: 'Obigzin', handle: '@obigzin', category: 'Cantores', chip: 'Cliente', role: 'Cantor · Luthier e produtor musical', audience: '2,3 mil seguidores', url: 'https://www.instagram.com/obigzin/', images: [], reels: ['DV9ap-zBUeS', 'DWztCyihR1L', 'DZGQcM1p-Ek'], accent: 'primary', description: 'Social media para cantor, luthier e produtor musical: roteiros, edições e estratégia de redes para dar voz e alcance à carreira musical.' },
+  { id: 'obigzin', name: 'Obigzin', handle: '@obigzin', category: 'Cantores', chip: 'Cliente', role: 'Cantor · Luthier e produtor musical', audience: '2,3 mil seguidores', url: 'https://www.instagram.com/obigzin/', images: [obig1.url, obig2.url, obig3.url], accent: 'primary', description: 'Social media para cantor, luthier e produtor musical: roteiros, edições e estratégia de redes para dar voz e alcance à carreira musical.' },
 ];
 const filters = ['Todos', 'Influenciadores', 'Doceria', 'Cantores'];
 const services = [
