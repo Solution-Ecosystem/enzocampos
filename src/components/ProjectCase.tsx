@@ -113,7 +113,7 @@ export function ProjectCase({ client, index, total }: { client: CaseClient; inde
       <div className={client.reels?.length ? 'case-posters case-posters-reels' : 'case-posters'}>
         {client.reels?.length
           ? client.reels.map((id, i) => (
-            <div key={id} className="case-poster case-reel">
+            <div key={id} className={id === 'DWztCyihR1L' ? 'case-poster case-reel case-reel-wide' : 'case-poster case-reel'}>
               <iframe src={`https://www.instagram.com/reel/${id}/embed/`} title={`Reel ${i + 1} de ${client.name} no Instagram`} loading="lazy" allow="encrypted-media; picture-in-picture; clipboard-write" allowFullScreen scrolling="no" />
             </div>
           ))
