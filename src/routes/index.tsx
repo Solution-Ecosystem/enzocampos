@@ -5,24 +5,24 @@ import { Button } from '@/components/ui/button';
 import { ProjectCase, type CaseClient } from '@/components/ProjectCase';
 import heroImage from '@/assets/hero-enzo.jpg';
 import sealImage from '@/assets/seal-check.png';
-import kmposLogo from '@/assets/clients/kmpos-logo.png.asset.json';
-import enzoPhoto from '@/assets/clients/enzo-campos-2.jpg.asset.json';
+import kmposLogo from '@/assets/clients/kmpos-logo.png';
+import enzoPhoto from '@/assets/clients/enzo-campos-2.jpg';
 import { EMAIL, INSTAGRAM_HANDLE, INSTAGRAM_URL, AGENCY_URL, WHATSAPP_DISPLAY, openExternal, whatsappUrl } from '@/lib/contact';
-import alemao1 from '@/assets/clients/oalemaoluiz-1.jpg.asset.json';
-import alemao3 from '@/assets/clients/oalemaoluiz-3.jpg.asset.json';
-import alemao4 from '@/assets/clients/oalemaoluiz-4.jpg.asset.json';
-import obig1 from '@/assets/clients/obigzin-1.jpg.asset.json';
-import obig2 from '@/assets/clients/obigzin-2.jpg.asset.json';
-import obig3 from '@/assets/clients/obigzin-3.jpg.asset.json';
-import dudu1 from '@/assets/clients/dudufootz-1.jpg.asset.json';
-import dudu3 from '@/assets/clients/dudufootz-3.jpg.asset.json';
-import dudu4 from '@/assets/clients/dudufootz-4.jpg.asset.json';
-import bolo1 from '@/assets/clients/meninadobolo-oficial-1.jpg.asset.json';
-import bolo4 from '@/assets/clients/meninadobolo-oficial-4.jpg.asset.json';
-import bolo6 from '@/assets/clients/meninadobolo-oficial-6.jpg.asset.json';
-import fe1 from '@/assets/clients/eufecastroo-1.jpg.asset.json';
-import fe3 from '@/assets/clients/eufecastroo-3.jpg.asset.json';
-import fe6 from '@/assets/clients/eufecastroo-6.jpg.asset.json';
+import alemao1 from '@/assets/clients/oalemaoluiz-1.jpg';
+import alemao3 from '@/assets/clients/oalemaoluiz-3.jpg';
+import alemao4 from '@/assets/clients/oalemaoluiz-4.jpg';
+import obig1 from '@/assets/clients/obigzin-1.jpg';
+import obig2 from '@/assets/clients/obigzin-2.jpg';
+import obig3 from '@/assets/clients/obigzin-3.jpg';
+import dudu1 from '@/assets/clients/dudufootz-1.jpg';
+import dudu3 from '@/assets/clients/dudufootz-3.jpg';
+import dudu4 from '@/assets/clients/dudufootz-4.jpg';
+import bolo1 from '@/assets/clients/meninadobolo-oficial-1.jpg';
+import bolo4 from '@/assets/clients/meninadobolo-oficial-4.jpg';
+import bolo6 from '@/assets/clients/meninadobolo-oficial-6.jpg';
+import fe1 from '@/assets/clients/eufecastroo-1.jpg';
+import fe3 from '@/assets/clients/eufecastroo-3.jpg';
+import fe6 from '@/assets/clients/eufecastroo-6.jpg';
 
 export const Route = createFileRoute('/')({
   head: () => ({ meta: [
@@ -37,11 +37,11 @@ export const Route = createFileRoute('/')({
 });
 
 const clients: CaseClient[] = [
-  { id: 'alemao', name: 'Alemão Luiz', handle: '@oalemaoluiz', category: 'Influenciadores', chip: 'Cliente', role: 'Influenciador · Lifestyle, humor e futebol', audience: '406 mil seguidores', url: 'https://www.instagram.com/oalemaoluiz/', images: [alemao1.url, alemao3.url, alemao4.url], accent: 'blue', description: 'Social media completo para um influenciador de lifestyle, humor e futebol: roteiros, edições e cronograma pensados para manter a constância e fortalecer a conexão com o público.' },
-  { id: 'dudu', name: 'Dudu Footz', handle: '@dudufootz', category: 'Influenciadores', chip: 'Cliente', role: 'Influenciador · Humor e futebol', audience: '2 milhões de seguidores', url: 'https://www.instagram.com/dudufootz/', images: [dudu1.url, dudu4.url, dudu3.url], accent: 'green', description: 'Estratégia de conteúdo para um perfil de humor e futebol com milhões de seguidores: posicionamento, roteiros com ganchos fortes e edição no ritmo das redes.' },
-  { id: 'bolo', name: 'Menina do Bolo', handle: '@meninadobolo_oficial', category: 'Doceria', role: 'Doceria · Confeitaria artesanal', audience: '35 mil seguidores', url: 'https://www.instagram.com/meninadobolo_oficial/', images: [bolo1.url, bolo4.url, bolo6.url], accent: 'pink', description: 'Presença digital para uma confeitaria artesanal: apresentação atrativa dos produtos, cronograma de postagens e uma identidade clara e consistente no feed.' },
-  { id: 'fe', name: 'Fe Castro', handle: '@eufecastroo', category: 'Cantores', chip: 'Cliente', role: 'Cantor · Compositor', audience: '2,9 mil seguidores', url: 'https://www.instagram.com/eufecastroo/', images: [fe3.url, fe1.url, fe6.url], accent: 'sun', description: 'Posicionamento artístico para cantor e compositor: narrativa do perfil, divulgação de lançamentos e conteúdos que aproximam o artista de quem escuta.' },
-  { id: 'obigzin', name: 'Obigzin', handle: '@obigzin', category: 'Cantores', chip: 'Cliente', role: 'Cantor · Luthier e produtor musical', audience: '2,3 mil seguidores', url: 'https://www.instagram.com/obigzin/', images: [obig1.url, obig2.url, obig3.url], accent: 'primary', description: 'Social media para cantor, luthier e produtor musical: roteiros, edições e estratégia de redes para dar voz e alcance à carreira musical.' },
+  { id: 'alemao', name: 'Alemão Luiz', handle: '@oalemaoluiz', category: 'Influenciadores', chip: 'Cliente', role: 'Influenciador · Lifestyle, humor e futebol', audience: '406 mil seguidores', url: 'https://www.instagram.com/oalemaoluiz/', images: [alemao1, alemao3, alemao4], accent: 'blue', description: 'Social media completo para um influenciador de lifestyle, humor e futebol: roteiros, edições e cronograma pensados para manter a constância e fortalecer a conexão com o público.' },
+  { id: 'dudu', name: 'Dudu Footz', handle: '@dudufootz', category: 'Influenciadores', chip: 'Cliente', role: 'Influenciador · Humor e futebol', audience: '2 milhões de seguidores', url: 'https://www.instagram.com/dudufootz/', images: [dudu1, dudu4, dudu3], accent: 'green', description: 'Estratégia de conteúdo para um perfil de humor e futebol com milhões de seguidores: posicionamento, roteiros com ganchos fortes e edição no ritmo das redes.' },
+  { id: 'bolo', name: 'Menina do Bolo', handle: '@meninadobolo_oficial', category: 'Doceria', role: 'Doceria · Confeitaria artesanal', audience: '35 mil seguidores', url: 'https://www.instagram.com/meninadobolo_oficial/', images: [bolo1, bolo4, bolo6], accent: 'pink', description: 'Presença digital para uma confeitaria artesanal: apresentação atrativa dos produtos, cronograma de postagens e uma identidade clara e consistente no feed.' },
+  { id: 'fe', name: 'Fe Castro', handle: '@eufecastroo', category: 'Cantores', chip: 'Cliente', role: 'Cantor · Compositor', audience: '2,9 mil seguidores', url: 'https://www.instagram.com/eufecastroo/', images: [fe3, fe1, fe6], accent: 'sun', description: 'Posicionamento artístico para cantor e compositor: narrativa do perfil, divulgação de lançamentos e conteúdos que aproximam o artista de quem escuta.' },
+  { id: 'obigzin', name: 'Obigzin', handle: '@obigzin', category: 'Cantores', chip: 'Cliente', role: 'Cantor · Luthier e produtor musical', audience: '2,3 mil seguidores', url: 'https://www.instagram.com/obigzin/', images: [obig1, obig2, obig3], accent: 'primary', description: 'Social media para cantor, luthier e produtor musical: roteiros, edições e estratégia de redes para dar voz e alcance à carreira musical.' },
 ];
 const filters = ['Todos', 'Influenciadores', 'Doceria', 'Cantores'];
 const services = [
@@ -111,7 +111,7 @@ function Portfolio() {
           <div className="section-eyebrow">02 / Por trás das ideias</div>
           <div className="about-panel">
             <figure className="about-photo">
-              <img src={enzoPhoto.url} alt="Enzo Campos" width={640} height={641} loading="lazy" />
+              <img src={enzoPhoto} alt="Enzo Campos" width={640} height={641} loading="lazy" />
               <figcaption>Enzo<br />Campos</figcaption>
               <img className="about-seal" src={sealImage} alt="" aria-hidden="true" width={816} height={816} loading="lazy" />
             </figure>
@@ -153,7 +153,7 @@ function Portfolio() {
           <div className="reel-grid">{reels.map((id, i) => {
             const reelUrl = `https://www.instagram.com/reel/${id}/`;
             return <article className="reel-card" key={id}>
-              <header className="reel-head"><img src={enzoPhoto.url} alt="" width={40} height={40} loading="lazy" /><span><strong>{INSTAGRAM_HANDLE}</strong><small>Reel 0{i + 1}</small></span><Button asChild size="sm" className="reel-profile"><a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" onClick={e => openExternal(e, INSTAGRAM_URL)}>Ver perfil</a></Button></header>
+              <header className="reel-head"><img src={enzoPhoto} alt="" width={40} height={40} loading="lazy" /><span><strong>{INSTAGRAM_HANDLE}</strong><small>Reel 0{i + 1}</small></span><Button asChild size="sm" className="reel-profile"><a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" onClick={e => openExternal(e, INSTAGRAM_URL)}>Ver perfil</a></Button></header>
               <div className="reel-video"><iframe src={`${reelUrl}embed/`} title={`Reel ${i + 1} de Enzo Campos no Instagram`} loading="lazy" allow="encrypted-media; picture-in-picture; clipboard-write" allowFullScreen scrolling="no" /></div>
               <a className="reel-foot" href={reelUrl} target="_blank" rel="noopener noreferrer" onClick={e => openExternal(e, reelUrl)}><Instagram /> Assistir no Instagram <ArrowUpRight /></a>
             </article>;
@@ -178,7 +178,7 @@ function Portfolio() {
 
 function AgencyBadge() {
   const inner = <>
-    <img src={kmposLogo.url} alt="Logo da Kmpos Agency" width={600} height={600} loading="lazy" />
+    <img src={kmposLogo} alt="Logo da Kmpos Agency" width={600} height={600} loading="lazy" />
     <span><small>Faz parte da</small><strong>KMPOS AGENCY</strong><em>Social media, conteúdo e posicionamento para marcas que querem ser lembradas.</em></span>
     {AGENCY_URL && <ArrowUpRight aria-hidden="true" />}
   </>;
